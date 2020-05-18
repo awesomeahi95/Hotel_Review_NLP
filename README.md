@@ -84,7 +84,8 @@ As a struggling US life insurance company, our goal is to increase revenues by 2
 <a name="Webscraping"></a>
 ### Webscraping
 
-I set a goal of a minimum of 5000 reviews to scrape, before choosing the specific hotels. I then chose the 5 Hilton hotels with the highest number of reviews, to scrape; London Gatwick Airport, London Metropole, London Euston, London Croydon, and London - West End. Between these 5 hotels there were 17538 reviews, I had plenty room to filter or drop reviews and retain at least my minimum of 5000.
+I set a goal of a minimum of 5000 reviews to scrape, before choosing the specific hotels. I then chose the 5 Hilton hotels with the highest number of reviews, to scrape; London Gatwick Airport, London Metropole, London Euston, London Croydon, and London - West End. 
+Between these 5 hotels there were 17538 reviews, I had plenty room to filter or drop reviews and retain at least my minimum of 5000.
 
 <h5 align="center">Tripadvisor Review Example</h5>
 <p align="center">
@@ -109,23 +110,29 @@ From these pages I chose to extract 5 different features:
 - review_p2
 - score
 
-I used a scrapy spider to crawl the website to scrape the requested data. Scrapy proved the be efficient and fast at extracting the data. I ran the spider script (hotels.py) for around 20 minutes, on the 14th May 2020.
+I used a scrapy spider to crawl the website to scrape the requested data. Scrapy proved the be efficient and fast at extracting the data. I ran the spider script (hotels.py) for around 20 minutes, on the 13th May 2020.
+
+<h5 align="center">Histogram of Scores for Each Hotel</h5>
+<p align="center">
+  <img src="https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/hotels_and_score.png" width=600>
+</p>
 
 
 <a name="Early_EDA_and_Cleaning"></a>
 ### Early EDA and Cleaning: 
 
-The dataset we used contained a wide ranging set of health ranking features per county within each state. This included data points such as premature deaths, low birthweight, adult smoking etc. As an intial step, we selected the premature death as our dependent variable, what we aim to predict. This variable is categorized as Years Potential Life Loff (YPLL) - estimate of the average years a person would have lived if he or she had not died prematurely. It is a measure of premature mortality. 
+The initial shape of the csv was (35078,5). The 5 columns was as expected, but there were double the number of rows as the number of reviews scraped. There were null rows with only hotel_name and no other values, so I removed those rows, bringing us back to the expected 17538.
 
-We then decided to exclude columns with confidence interval and quantile to simplify our selection process and model application. In addition, we tested for multicollinearity for the independent variables using a VIF (variance inflation factor) test. It yield some highly collinear relationships across variables that we then excluded. 
+This project entailed the use of classification models, and for reliable results, I had to remove reviews to undo class imbalance. Using this visualisation I saw that were much less reviews with a score of 1 compared to reviews with a score of 3, 4, and 5. To combat this imbalance, I randomly removed reviews with scores of 2, 3, 4, and 5, to match with 1 (1881 reviews). 
 
-We subsequently ran a correlation matrix across all remaining variables and selected 5 variables with some form of positive or negative correlation and plausible causal relationsip with premature deaths. We purposefully kept a wide range of correlation selection as to avoid missing possible related interactions which could help us predict our dependent variable.
-
-Some of our independent variables selected included: Diabetes prevalance raw value, Poor or fair health raw value, and median household income raw value
-
-<h5 align="center">Correlation Heatmap of Remaining Variables</h5>
+<h5 align="center">Histogram of Scores for All Hotels (With  Class Imbalance vs Without  Class Imbalance)</h5>
 <p align="center">
-  <img src="https://github.com/awesomeahi95/LaVie-Insurance/blob/master/Images/Correlation_Heatmap.png" width=600>
+    | [(https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/with_class_imbalance.png)] | [(https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/without_class_imbalance.png)] |
+<p align='left'>
+  <img src="https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/with_class_imbalance.png" width=600>
+</p>
+<p align="right">
+  <img src="https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/without_class_imbalance.png" width=600>
 </p>
 
 <a name="Further_EDA_and_Preprocessing"></a>
