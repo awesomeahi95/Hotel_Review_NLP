@@ -16,6 +16,7 @@ from sklearn import tree
 from sklearn.tree import export_graphviz
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.linear_model import LogisticRegression
+from sklearn.naive_bayes import GaussianNB
 from yellowbrick.model_selection import feature_importances
 
 #===============================================================================================#
@@ -67,6 +68,8 @@ class Classification():
             self.technique = RandomForestClassifier(n_estimators=20,n_jobs=-1,random_state=42)
         elif self.model_type == 'SVM':
             self.technique = SVC()
+        elif self.model_type == 'Naive Bayes':
+            self.technique = GaussianNB()
             
 #===============================================================================================#
 
@@ -157,36 +160,6 @@ class Classification():
 
 #===============================================================================================#
 
-# Plot Decision Tree Function
-
-#===============================================================================================#
-
-    def plot_decision_tree(self):
-               
-        """
-        Displays a graphic confusion matrix.
-
-        """
-        
-        if self.model_type == "Decision Tree":
-            dot_data = StringIO()
-            export_graphviz(self.best_model, out_file=dot_data,  
-                            filled=True, rounded=True,
-                            special_characters=True)
-            graph = pydotplus.graph_from_dot_data(dot_data.getvalue())  
-            
-            graph.write_png(f'{self.model_type}.png')
-            
-            img = mpimg.imread(f'{self.model_type}.png')
-            plt.figure(figsize=(40,50))
-            plt.imshow(img)
-            plt.show()  
-        
-        else:
-            print("This model does not have a decision tree plot!")
-            
-#===============================================================================================#
-
 # Feature Importance Function
 
 #===============================================================================================#
@@ -196,24 +169,23 @@ class Classification():
         """
         Create a confusion matrix.
 
-        Parameters
-        ----------
-        y_true: series 
-        containing the target variable of the validation data
-        
-        y_pred: series 
-        containing the predicted values of the target variable
 
         Returns
         ----------
-        scores_table: a confusion matrix
+        feature_importances_bar : a bar chart with feature importance of given model
 
         """
-            
-        self.feature_importances = pd.DataFrame(self.best_model.feature_importances_,
-                                                index = self.x_train.columns,
-                                                columns=['Importance']).sort_values('Importance',ascending =False)
-        return self.feature_importances
+        if (self.model_type == 'Decision Tree') or (self.model_type == 'Random Forest'):    
+            self.feature_importances_table = pd.DataFrame(self.best_model.feature_importances_,
+                                                    index = self.x_train.columns,
+                                                    columns=['Importance']).sort_values('Importance',ascending =False)
+            plt.figure(figsize=(9,7.5))
+            self.feature_importances_bar = sns.barplot(y= self.feature_importances_table.index[:15], x= self.feature_importances_table['Importance'][:15])
+            plt.show()
+            return self.feature_importances_bar
+        
+        else:
+            return print('This classification method does not have the attribute feature importance.')
 
 #===============================================================================================#
 
@@ -226,6 +198,7 @@ class Classification():
         """
         Gets a ROC AUC score for given data and creates a dataframe containing scores.
         Creates a ROC plot.
+        
 
         Parameters
         ----------
