@@ -10,8 +10,8 @@ By using sentiment analysis, on existing hotel reviews from Tripadvisor.com, I c
 
 1. [ File Descriptions ](#File_Description)
 2. [ Strucuture ](#Structure)
-3. [ Webscraping ](#Webscraping)
 3. [ Executive Summary ](#Executive_Summary)
+   * [ Webscraping ](#Webscraping)
    * [ 1. Early EDA and Cleaning ](#Early_EDA_and_Cleaning)
    * [ 2. Further EDA and Preprocessing ](#Further_EDA_and_Preprocessing) 
    * [ 3. Modelling ](#Modelling)
@@ -25,7 +25,7 @@ By using sentiment analysis, on existing hotel reviews from Tripadvisor.com, I c
         - spiders: folder containing spider files and datasets
             - hotels.py: main spider .py file for scraping hotel reviews from Tripadvisor
             - tripadvisor_scraped_hotel_reviews.csv: csv file with data to be used for project
-        - __init__.py, items.py, middlewares.py, pipelines.py, settings.py: default scrapy files used for webscrape
+        - _init_.py, items.py, middlewares.py, pipelines.py, settings.py: default scrapy files used for webscrape
     - scrapy.cfg: scrap config file
 - 1.Early_EDA_and_Cleaning.ipynb: notebook with early data exploration and data manipulation
 - 2.Further_EDA_and_Preprocessing.ipynb: notebook with feature engineering and nlp preprocessing
@@ -73,14 +73,47 @@ By using sentiment analysis, on existing hotel reviews from Tripadvisor.com, I c
 
 4. Evaluation
    - 4.1 Imports
-
-<a name="executive_summary"></a>
+   
+   
+<a name="Executive_Summary"></a>
 ## Executive Summary
 
 As a struggling US life insurance company, our goal is to increase revenues by 2% using a risk premium based on premature deaths per state. We aim to hike insurance contract prices across the states that pause the highest future risk of premature death rates. This should in turn take our net premium growth rate above annual inflation which we have been on par with for the last five years and move to a more risk-adjusted business model which is key in our industry. 
 
-<a name="data_structure_and_selection"></a>
-### Data Cleaning and Feature Engineering: 
+
+<a name="Webscraping"></a>
+### Webscraping
+
+I set a goal of a minimum of 5000 reviews to scrape, before choosing the specific hotels. I then chose the 5 Hilton hotels with the highest number of reviews, to scrape; London Gatwick Airport, London Metropole, London Euston, London Croydon, and London - West End. Between these 5 hotels there were 17538 reviews, I had plenty room to filter or drop reviews and retain at least my minimum of 5000.
+
+<h5 align="center">Tripadvisor Review Example</h5>
+<p align="center">
+  <img src="https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/Tripadvisor_Review_Example.png" width=600>
+</p>
+
+The structure of each review consisted of a 1-5 scale score rating in bubble form, a review summary, and a detailed review split into p1 and p2 (depending on if there was a read more option). Each page on tripadvisor had 5 reviews per page, so I had to navigate between pages using tripadvisor's next page function. 
+
+The root URL I used was 'www.tripadvisor.co.uk'
+
+The 5 starting URL extensions I used were:
+- '/Hotel_Review-g187051-d239658-Reviews-Hotel_Hilton_London_Gatwick_Airport-Crawley_West_Sussex_England.html/'
+- '/Hotel_Review-g186338-d193089-Reviews-Hilton_London_Metropole-London_England.html/'
+- '/Hotel_Review-g186338-d192048-Reviews-Hilton_London_Euston-London_England.html/'
+- '/Hotel_Review-g186338-d193102-Reviews-DoubleTree_by_Hilton_Hotel_London_West_End-London_England.html/'
+- '/Hotel_Review-g504167-d192599-Reviews-Hilton_London_Croydon-Croydon_Greater_London_England.html'
+
+From these pages I chose to extract 5 different features:
+- hotel_name
+- review_summary
+- review_p1
+- review_p2
+- score
+
+I used a scrapy spider to crawl the website to scrape the requested data. Scrapy proved the be efficient and fast at extracting the data. I ran the spider script (hotels.py) for around 20 minutes, on the 14th May 2020.
+
+
+<a name="Early_EDA_and_Cleaning"></a>
+### Early EDA and Cleaning: 
 
 The dataset we used contained a wide ranging set of health ranking features per county within each state. This included data points such as premature deaths, low birthweight, adult smoking etc. As an intial step, we selected the premature death as our dependent variable, what we aim to predict. This variable is categorized as Years Potential Life Loff (YPLL) - estimate of the average years a person would have lived if he or she had not died prematurely. It is a measure of premature mortality. 
 
@@ -95,12 +128,12 @@ Some of our independent variables selected included: Diabetes prevalance raw val
   <img src="https://github.com/awesomeahi95/LaVie-Insurance/blob/master/Images/Correlation_Heatmap.png" width=600>
 </p>
 
-<a name="preprocessing"></a>
-### Preprocessing
+<a name="Further_EDA_and_Preprocessing"></a>
+### Further EDA and Preprocessing
 
 The initial step included setting up a structured framework to the data. We initially setup a train-test split at a 2/3 // 1/3 respective split to include at least 1000 observations in our testing test. For the regularisation models we used StandardScaler to standardise our data.
 
-<a name="modelling"></a>
+<a name="Modelling"></a>
 ### Modelling:
 
 We then performed 5-fold cross validation across our models for our training data to validate the completeness and quality of our data-model interaction. This also allowed us to select the highest performing models within each model group/type. 
@@ -137,7 +170,7 @@ Finally, we ran the model on the test set and got an R^2 of 0.5626 illustrating 
 </p>
 
 
-<a name="conclusion"></a>
-### Conclusion
+<a name="Evaluation"></a>
+### Evaluation
 
 We believe our final model provides us enough prediction accuracy to implement the life insurance premium increase. We are aiming to perform this increase as a function of YPLL predictions scaled to the population size. This model should allow us not only to increase our revenues but to shift towards a more risk-adjusted revenue approach which we can replicate in the future. 
