@@ -126,14 +126,9 @@ The initial shape of the csv was (35078,5). The 5 columns was as expected, but t
 This project entailed the use of classification models, and for reliable results, I had to remove reviews to undo class imbalance. Using this visualisation I saw that were much less reviews with a score of 1 compared to reviews with a score of 3, 4, and 5. To combat this imbalance, I randomly removed reviews with scores of 2, 3, 4, and 5, to match with 1 (1881 reviews). 
 
 <h5 align="center">Histogram of Scores for All Hotels (With  Class Imbalance vs Without  Class Imbalance)</h5>
-<p align="center">
-    | [(https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/with_class_imbalance.png)] | [(https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/without_class_imbalance.png)] |
-<p align='left'>
-  <img src="https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/with_class_imbalance.png" width=600>
-</p>
-<p align="right">
-  <img src="https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/without_class_imbalance.png" width=600>
-</p>
+<table><tr><td><img src='https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/with_class_imbalance.png' width=500></td><td><img src='https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/without_class_imbalance.png' width=500></td></tr></table>
+
+
 
 <a name="Further_EDA_and_Preprocessing"></a>
 ### Further EDA and Preprocessing
