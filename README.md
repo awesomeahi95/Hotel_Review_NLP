@@ -122,7 +122,7 @@ The initial shape of the dataset was (35078,5). The 5 columns was as expected, b
 
 This project entailed the use of classification models, and for reliable results, I had to remove reviews to undo class imbalance. Using this visualisation I saw that were much less reviews with a score of 1 compared to reviews with a score of 3, 4, and 5. To combat this imbalance, I randomly removed reviews with scores of 2, 3, 4, and 5, to match with 1 (1881 reviews). 
 
-<h5 align="center">Histogram of Scores for All Hotels (With  Class Imbalance vs Without  Class Imbalance)</h5>
+<h5 align="center">Histogram of Scores for All Hotels (With  Class Imbalance (Left) vs Without  Class Imbalance (Right))</h5>
 <table><tr><td><img src='https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/with_class_imbalance.png' width=500></td><td><img src='https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/without_class_imbalance.png' width=500></td></tr></table>
 
 I combined the review p1 and review p2 column into one to make future vectorisation much easier, then I saved the cleaned dataset as a csv, for the next stage.
@@ -132,10 +132,26 @@ I combined the review p1 and review p2 column into one to make future vectorisat
 
 The cleaned dataset had a shape of (9405,4). I started with some analysis on the text columns; review and review summary.
 
-Using the FreqDist function in the ntlk library I plotted a graph with the most frequent words and phrases in both columns.
+Using the FreqDist function in the ntlk library I plotted a graph with the most frequent words and phrases in both columns. Stopwords were removed to capture the more meaningful words.
 
-<h5 align="center">Distribution Plot of Frequent Words and Phrases in Text (Review Summary and Review)</h5>
+<h5 align="center">Distribution Plot of Frequent Words and Phrases in Text (Review Summary (Left) and Review (Right))</h5>
 <table><tr><td><img src='https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/frequency_dist_review_summary.png' width=500></td><td><img src='https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/frequency_dist_review.png' width=500></td></tr></table>
+
+I had noticed a lot of the most frequent words in the review text happened to be words with no sentimental impact, so I had to keep that in mind for further preprocessing steps.
+
+To narrow down the feature words I applied stemmation and lemmitisation to both the reviews and review summaries. 
+
+<h5 align="center">Distribution Plot of Frequent Words and Phrases in Text (Review Summary (Left) and Review (Right))</h5>
+<p align="center">
+  <img src="https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/lemm_stemm_ex.png" width=800>
+</p>
+
+Stemmation had broken down some words into words that don't exist, whereas lemmitisation had simplified adjectives and verbs to their root form. I chose to continue with the lemmitised version of the texts for further processing.
+
+Prior to vectorising the current dataset, I did a train, test split to save the test data for after modelling.
+
+Using the lemmed texts for review and review summary I used TF-IDF vectorisation, leaving me with a vectorised dataset with 234 words and phrases (178 from reviews and 56 from review summaries).
+
 
 <a name="Modelling"></a>
 ### Modelling:
