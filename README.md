@@ -6,11 +6,9 @@ Potential customers, could have their hotel choice be influenced by a tweet. Opi
 
 By using sentiment analysis, on existing hotel reviews from Tripadvisor.com, I created a model that can quantify on a scale of 1-5, how the author of a tweet on twitter, or a post on a reddit thread, feels about our hotel, and as a result, also how the readers think about us.
 
-## My Details
+Email: candyahs@gmail.com
+LinkedIn: www.linkedin.com/in/ahilan-srivishnumohan/
 
- - Name = Ahilan Srivishnumohan
- - Linkedin = https://www.linkedin.com/in/ahilan-srivishnumohan/
- - Email Address = candyahs@gmail.com
 ## Table of Contents
 
 1. [ File Descriptions ](#File_Description)
@@ -26,6 +24,16 @@ By using sentiment analysis, on existing hotel reviews from Tripadvisor.com, I c
 <a name="File_Description"></a>
 ## File Descriptions
 
+- Data: folder containing all data files
+    - 1.tripadvisor_scraped_hotel_reviews.csv: webscraped data before any changes
+    - 2.hotel_reviews_structured.csv: data after balancing and cleaning
+    - 3.x_train_data.csv: training data with x values from preprocessed dataset
+    - 3.y_train_data.csv: training data with y values from preprocessed dataset
+    - 4.x_test_data.csv: test data with x values from preprocessed dataset
+    - 4.y_test_data.csv: test data with y values from preprocessed dataset
+- Images: folder containing images used for README and presentation pdf
+- Models: folder containing training models saved with pickle
+    - Adabooost.pkl, Decision Tree.pkl, KNN.pkl, Logistic Regression.pkl, Naive Bayes.pkl, Random Forest.pkl, Stacking.pkl, SVM.pkl, Voting.pkl, XGBoost.pkl
 - Tripadvisor_Webscrape: folder containing all webscraping files
     - Tripadvisor: folder containing .py files and spiders used
         - spiders: folder containing spider files and datasets
@@ -33,16 +41,13 @@ By using sentiment analysis, on existing hotel reviews from Tripadvisor.com, I c
             - tripadvisor_scraped_hotel_reviews.csv: csv file with data to be used for project
         - _init_.py, items.py, middlewares.py, pipelines.py, settings.py: default scrapy files used for webscrape
     - scrapy.cfg: scrap config file
-- 1.Early_EDA_and_Cleaning.ipynb: notebook with early data exploration and data manipulation
+- 1.Webscraping_Early_EDA_and_Cleaning.ipynb: notebook with early data exploration and data manipulation
 - 2.Further_EDA_and_Preprocessing.ipynb: notebook with feature engineering and nlp preprocessing
-- 3.Modelling.ipynb: notebook with all the models created
+- 3.Modelling_and_Hyperparameter_Tuning.ipynb: notebook with all the models created
+- 4.Evaluation
 - Classification.py: contains classes for classifcation methods
-- 1.tripadvisor_scraped_hotel_reviews.csv: webscraped data before any changes
-- 2.hotel_reviews_structured.csv: data after balancing and cleaning
-- 3.x_train_data.csv: training data with x values from preprocessed dataset
-- 3.y_train_data.csv: training data with y values from preprocessed dataset
-- final_model.pkl: final model saved using pickle.
-- Hilton_London.pdf: presentation summarising project process and findings
+- Ensemble.py: contains classes for ensemble methods
+- Hilton__Hotel_Presentation.pdf: presentation summarising project process and findings
 
 
 <a name="Structure"></a>
@@ -207,7 +212,7 @@ I focused on 3 factors of defining a good model:
 2. Good Training Accuracy
 3. Small Difference between Training and Validation Accuracy
 
-I chose the logistic regression model as my best model, because it has the second highest validation accuracy with only around 7% drop from train to validation in accuracy. I wanted to minimise overfitting and make the model as reusable as possible. logistic regression achieved a reasonble training accuracy as well, although it did not reach the level of some of the ensemble techniques.
+I chose the logistic regression model as my best model, because it has the second highest validation accuracy with only around 7% drop from train to validation in accuracy. I wanted to minimise overfitting and make the model as reusable as possible. Logistic regression achieved a reasonable training accuracy as well, although it did not reach the level of some of the ensemble techniques.
 
 I next tested the best model with the earlier saved test data. The model managed to get a higher test accuracy, than it did with validation data from the model training stage. This is very good, proving that prioritising a high validation score, and minimising the difference between train and validation accuracy, has helped it classify new review texts very well.
 
@@ -221,9 +226,10 @@ Looking at the precision, recall, and f1 score, I also noticed the scores were h
 Looking into different metrics and deeper into my best model; Logistic Regression, I learnt that most the False Postives came from close misses (e.g. predicting a score of 4 for a true score of 5). This is best shown by these two confusion matrixes (validation and test). 
 
 <h5 align="center">Confusion Matrix for Validation and Test Data Predictions(Validation (Left) and Test (Right))</h5>
-<table><tr><td><img src='https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/validation_conf_matrix.png' width=500></td><td><img src='https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/validation_conf_matrix.png' width=500></td></tr></table>
+<table><tr><td><img src='https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/validation_conf_matrix.png' width=500></td><td><img src='https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/test_conf_matrix.png' width=500></td></tr></table>
 
-The adjacent squares of the diagonal going across the confusion matrix, shows that the model's second highest prediction, for a given class (review score) is always a review score that is +- the true score.
+The adjacent squares of the diagonal going across the confusion matrix, shows that the model's second highest prediction for a given class (review score) is always a review score that is +-1 the true score.
 Very few reviews that have a score of 5, have been predicted to have a score of 1 or 2. This is very relieving to know, the majority of the error for the model, is no different to the error a human may make classifying a review to a score with a scale of 1-5.
+
 
 Given the classifcation problem is 5 way multi-class one and the adjacent classes can have overlap in the english language even to humans, this model I have created can be deployed.
