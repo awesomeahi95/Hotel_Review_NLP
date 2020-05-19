@@ -186,6 +186,8 @@ I focused on 3 factors of defining a good model:
 
 Initially, I thought the validation accuracy was low for most of the models I created, but when considering these models were attempting to classify for 5 different classes, 0.45 and greater seems very reasonable (where 0.2 = randomly guessing correctly).
 
+I chose Logistic Regression (log_reg_1) as my best model as it achieved the best validation score with only a drop of less than 6 percent between training and validation accuracy score.
+
 Looking into different metrics and deeper into my best model; Logistic Regression, I learnt that most the False Postives came from close misses (e.g. predicting a score of 4 for a true score of 5). This is best shown by a confusion matrix.
 
 <h5 align="center">Confusion Matrix for Best Model</h5>
