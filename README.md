@@ -146,7 +146,7 @@ To narrow down the feature words I applied stemmation and lemmitisation to both 
 
 <h5 align="center">Example of Lemmatisation and Stemmation Applied to a Review and Review Summary</h5>
 <p align="center">
-  <img src="https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/lemm_stemm_ex.png" width=800>
+  <img src="https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/lemm_stemm_ex.png" width=600>
 </p>
 
 Stemmation had broken down some words into words that don't exist, whereas lemmitisation had simplified adjectives and verbs to their root form. I chose to continue with the lemmitised version of the texts for further processing.
