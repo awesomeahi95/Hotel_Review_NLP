@@ -8,6 +8,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import GridSearchCV, StratifiedKFold
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.linear_model import LogisticRegression
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn.naive_bayes import GaussianNB
 from yellowbrick.model_selection import feature_importances
 
@@ -62,6 +63,8 @@ class Classification():
             self.technique = SVC()
         elif self.model_type == 'Naive Bayes':
             self.technique = GaussianNB()
+        elif self.model_type == 'KNN':
+            self.technique = KNeighborsClassifier()
             
 #===============================================================================================#
 
@@ -102,7 +105,8 @@ class Classification():
         
         d = {'Model Name': [self.model_type],
              'Train Accuracy': [self.acc_train], 
-             'Validation Accuracy': [self.acc_val]}
+             'Validation Accuracy': [self.acc_val],
+             'Accuracy Difference':[self.acc_train-self.acc_val]}
         self.scores_table = pd.DataFrame(data=d)
         
         return self.scores_table
@@ -148,8 +152,8 @@ class Classification():
         else:
             print("The best hyperparameters are: ", self.best_params,'\n')
         self.y_validated = self.best_model.predict(self.x_val)
-        self.classification_report = classification_report(self.y_val,self.y_validated)
-        print(self.classification_report)
+        self.classification_report = pd.DataFrame.from_dict(classification_report(self.y_val,self.y_validated,output_dict=True)).iloc[0:3,0:5]
+        return self.classification_report
 
 #===============================================================================================#
 
@@ -190,14 +194,7 @@ class Classification():
         
         """
         Create a confusion matrix.
-
-        Parameters
-        ----------
-        y_true: series 
-        containing the target variable of the validation data
         
-        y_pred: series 
-        containing the predicted values of the target variable
 
         Returns
         ----------
@@ -207,9 +204,9 @@ class Classification():
         
         plt.figure(figsize=(9,9))
         ax = sns.heatmap(confusion_matrix(self.y_val, self.y_validated),
-                    annot= True, 
-                    fmt = '.4g', 
-                    cbar=0)
+                        annot= True, 
+                        fmt = '.4g', 
+                        cbar=0)
         ax.set(xlabel='Predicted', ylabel='True')
         plt.show()
 

@@ -70,6 +70,8 @@ By using sentiment analysis, on existing hotel reviews from Tripadvisor.com, I c
    - 3.5 Logistic Regression
    - 3.6 Support Vector Machines
    - 3.7 Guassian Naive Bayes
+   - 3.8 Adaboost (Logistic Regression)
+   - 3.9 XGBoost (Logistic Regression)
 
 4. Evaluation
    - 4.1 Imports
@@ -153,13 +155,28 @@ Stemmation had broken down some words into words that don't exist, whereas lemmi
 
 Prior to vectorising the current dataset, I did a train, test split to save the test data for after modelling.
 
-Using the lemmed texts for review and review summary I used TF-IDF vectorisation, leaving me with a vectorised dataset with 234 words and phrases (178 from reviews and 56 from review summaries).
+Using the lemmed texts for review and review summary I used TF-IDF vectorisation with an ngram range of 2, leaving me with a vectorised dataset with 174 words and phrases (141 from reviews and 33 from review summaries). I then saved the x and y train data in separate csv files for modelling.
 
 
 <a name="Modelling"></a>
 ### Modelling:
 
+I have created .py files; Classifiction.py and Ensemble.py with classes, that contain functions to simplify the modelling process, and to neaten up the modelling notebook.
 
+I did another data split into Train and Validation data in preparation for using GridSearch Cross Validation. I also chose Stratified 5-fold has a my choice for cross validating.
+
+For the majority of models I created, I applied hyperparameter tuning, where I started with a broad range of hyperparameters, and tuned for optimal train accuracy and validation accuracy. 
+
+I focused on 3 factors of defining a good model:
+
+1. Good Training Accuracy
+2. Good Validation Accuracy
+3. Small Difference between Training and Validation Accuracy
+
+<h5 align="center">Table Comparing Best Models</h5>
+<p align="center">
+  <img src="https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/model_comparison.png" width=600>
+</p>
 
 <a name="Evaluation"></a>
 ### Evaluation
