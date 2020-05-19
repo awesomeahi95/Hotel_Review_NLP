@@ -178,6 +178,15 @@ I focused on 3 factors of defining a good model:
   <img src="https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/model_comparison.png" width=600>
 </p>
 
+Initially, I thought the validation accuracy was low for most of the models I created, but when considering these models were attempting to classify for 5 different classes, 0.45 and greater seems very reasonable (where 0.2 = randomly guessing correctly).
+
+Looking into different metrics and deeper into my best model; Logistic Regression, I learnt that most the False Postives came from close misses (e.g. predicting a score of 4 for a true score of 5). This is best shown by a confusion matrix.
+
+<h5 align="center">Confusion Matrix for Best Model</h5>
+<p align="center">
+  <img src="https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/best_model_conf_matrix.png" width=600>
+</p>
+
 <a name="Evaluation"></a>
 ### Evaluation
 
