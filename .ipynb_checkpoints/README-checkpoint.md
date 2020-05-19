@@ -70,8 +70,14 @@ By using sentiment analysis, on existing hotel reviews from Tripadvisor.com, I c
    - 3.5 Logistic Regression
    - 3.6 Support Vector Machines
    - 3.7 Guassian Naive Bayes
-   - 3.8 Adaboost (Logistic Regression)
-   - 3.9 XGBoost (Logistic Regression)
+   - 3.8 KNN
+   - 3.9 Adaboost (Logistic Regression)
+   - 3.10 XGBoost (Logistic Regression)
+   - 3.11 Voting
+   - 3.12 Stacking
+   - 3.13 All Models Compared
+   - 3.14 Best Model (Logistic Regression) - Deeper Look
+   - 3.15 Saving Best Model
 
 4. Evaluation
    - 4.1 Imports
@@ -194,6 +200,8 @@ Looking at the precision, recall, and f1 score, I also noticed the scores were h
 <p align="center">
   <img src="https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/best_model_f1_score.png" width=600>
 </p>
+
+I have saved the best model using the pickle library's dump function.
 
 <a name="Evaluation"></a>
 ### Evaluation
