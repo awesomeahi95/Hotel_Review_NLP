@@ -25,30 +25,30 @@ LinkedIn: www.linkedin.com/in/ahilan-srivishnumohan/
 <a name="File_Description"></a>
 ## File Descriptions
 
-- Data: folder containing all data files
-    - <strong>1.tripadvisor_scraped_hotel_reviews.csv</strong>bold: webscraped data before any changes
-    - 2.hotel_reviews_structured.csv: data after balancing and cleaning
-    - 3.x_train_data.csv: training data with x values from preprocessed dataset
-    - 3.y_train_data.csv: training data with y values from preprocessed dataset
-    - 4.x_test_data.csv: test data with x values from preprocessed dataset
-    - 4.y_test_data.csv: test data with y values from preprocessed dataset
-- Images: folder containing images used for README and presentation pdf
-- Models: folder containing training models saved with pickle
-    - Adabooost.pkl, Decision Tree.pkl, KNN.pkl, Logistic Regression.pkl, Naive Bayes.pkl, Random Forest.pkl, Stacking.pkl, SVM.pkl, Voting.pkl, XGBoost.pkl
-- Tripadvisor_Webscrape: folder containing all webscraping files
-    - Tripadvisor: folder containing .py files and spiders used
-        - spiders: folder containing spider files and datasets
-            - hotels.py: main spider .py file for scraping hotel reviews from Tripadvisor
-            - tripadvisor_scraped_hotel_reviews.csv: csv file with data to be used for project
-        - _init_.py, items.py, middlewares.py, pipelines.py, settings.py: default scrapy files used for webscrape
-    - scrapy.cfg: scrap config file
-- 1.Webscraping_Early_EDA_and_Cleaning.ipynb: notebook with early data exploration and data manipulation
-- 2.Further_EDA_and_Preprocessing.ipynb: notebook with feature engineering and nlp preprocessing
-- 3.Modelling_and_Hyperparameter_Tuning.ipynb: notebook with all the models created
-- 4.Evaluation
-- Classification.py: contains classes for classifcation methods
-- Ensemble.py: contains classes for ensemble methods
-- Hilton__Hotel_Presentation.pdf: presentation summarising project process and findings
+- <strong>Data</strong>: folder containing all data files
+    - <strong>1.tripadvisor_scraped_hotel_reviews.csv</strong>: webscraped data before any changes
+    - <strong>2.hotel_reviews_structured.csv</strong>: data after balancing and cleaning
+    - <strong>3.x_train_data.csv</strong>: training data with x values from preprocessed dataset
+    - <strong>3.y_train_data.csv</strong>: training data with y values from preprocessed dataset
+    - <strong>4.x_test_data.csv</strong>: test data with x values from preprocessed dataset
+    - <strong>4.y_test_data.csv</strong>: test data with y values from preprocessed dataset
+- <strong>Images</strong>: folder containing images used for README and presentation pdf
+- <strong>Models</strong>: folder containing training models saved with pickle
+    - <strong>Adabooost.pkl, Decision Tree.pkl, KNN.pkl, Logistic Regression.pkl, Naive Bayes.pkl, Random Forest.pkl, Stacking.pkl, SVM.pkl, Voting.pkl, XGBoost.pkl</strong>
+- <strong>Tripadvisor_Webscrape</strong>: folder containing all webscraping files
+    - <strong>Tripadvisor</strong>: folder containing .py files and spiders used
+        - <strong>spiders</strong>: folder containing spider files and datasets
+            - <strong>hotels.py</strong>: main spider .py file for scraping hotel reviews from Tripadvisor
+            - <strong>tripadvisor_scraped_hotel_reviews.csv</strong>: csv file with data to be used for project
+        - <strong>_init_.py, items.py, middlewares.py, pipelines.py, settings.py: default scrapy files used for webscrape</strong>
+    - <strong>scrapy.cfg</strong>: scrap config file
+- <strong>1.Webscraping_Early_EDA_and_Cleaning.ipynb</strong>: notebook with early data exploration and data manipulation
+- <strong>2.Further_EDA_and_Preprocessing.ipynb</strong>: notebook with feature engineering and nlp preprocessing
+- <strong>3.Modelling_and_Hyperparameter_Tuning.ipynb</strong>: notebook with all the models created
+- <strong>4.Evaluation</strong>
+- <strong>Classification.py</strong>: contains classes for classifcation methods
+- <strong>Ensemble.py</strong>: contains classes for ensemble methods
+- <strong>Hilton__Hotel_Presentation.pdf</strong>: presentation summarising project process and findings
 
 
 <a name="Structure"></a>
