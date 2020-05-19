@@ -1,19 +1,11 @@
-from IPython.display import display
-from IPython.display import Image
-import pydotplus
-from sklearn.externals.six import StringIO 
 import numpy as np
 import pandas as pd
-import itertools
 import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
 import seaborn as sns
 from sklearn.svm import SVC
-from sklearn.metrics import confusion_matrix, roc_curve, roc_auc_score 
+from sklearn.metrics import confusion_matrix, classification_report
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import GridSearchCV, StratifiedKFold
-from sklearn import tree
-from sklearn.tree import export_graphviz
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.naive_bayes import GaussianNB
@@ -155,8 +147,9 @@ class Classification():
             pass
         else:
             print("The best hyperparameters are: ", self.best_params,'\n')
-        
-
+        self.y_validated = self.best_model.predict(self.x_val)
+        self.classification_report = classification_report(self.y_val,self.y_validated)
+        print(self.classification_report)
 
 #===============================================================================================#
 
@@ -186,6 +179,41 @@ class Classification():
         
         else:
             return print('This classification method does not have the attribute feature importance.')
+
+#===============================================================================================#
+
+# Confusion Matrix Function
+
+#===============================================================================================#
+
+    def conf_matrix(self):
+        
+        """
+        Create a confusion matrix.
+
+        Parameters
+        ----------
+        y_true: series 
+        containing the target variable of the validation data
+        
+        y_pred: series 
+        containing the predicted values of the target variable
+
+        Returns
+        ----------
+        scores_table: a confusion matrix
+
+        """
+        
+        plt.figure(figsize=(9,9))
+        ax = sns.heatmap(confusion_matrix(self.y_val, self.y_validated),
+                    annot= True, 
+                    fmt = '.4g', 
+                    cbar=0)
+        ax.set(xlabel='Predicted', ylabel='True')
+        plt.show()
+
+
 
 #===============================================================================================#
 
@@ -254,46 +282,3 @@ class Classification():
         plt.grid(False)
         plt.colorbar
         
-#===============================================================================================#
-
-# Optimal Threshold Calculator Function
-
-#===============================================================================================#       
-    
-    def threshold_calculator(self,CTP,CFP,CTN,CFN):
-        
-        """
-        Calulates the best threshold for given the model and the costs.
-
-        Parameters
-        ----------
-        CTP: float or int
-        cost of true positives
-        
-        CFP: float or int
-        cost of false positives
-        
-        CTN: float or int
-        cost of true negatives
-        
-        CFN: float or int
-        cost of false negatives
-
-        Returns
-        ----------
-        scores_table: a dataframe with the threshold, FPR, TPR, and fm value (in descending order)
-
-        """
-        
-        TP = self.cm_values['TP']
-        FP = self.cm_values['FP']
-        TN = self.cm_values['TN']
-        FN = self.cm_values['FN']
-        Prevalance = (TP + FP)/(TP+FP+TN+FN)
-        m = ((1-Prevalance)/Prevalance) * ( (CFP - CTN) / (CFN - CTP) )
-        fm = []
-        for i,row in self.threshold_df.iterrows():
-            fm.append(row.TPR - (m*(row.FPR)))
-        self.threshold_df['fm']  = fm
-        return self.threshold_df.sort_values(by='fm',ascending=False).head()
-    

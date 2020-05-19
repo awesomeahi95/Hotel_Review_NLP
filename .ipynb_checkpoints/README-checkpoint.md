@@ -137,14 +137,23 @@ Using the FreqDist function in the ntlk library I plotted a graph with the most 
 <h5 align="center">Distribution Plot of Frequent Words and Phrases in Text (Review Summary (Left) and Review (Right))</h5>
 <table><tr><td><img src='https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/frequency_dist_review_summary.png' width=500></td><td><img src='https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/frequency_dist_review.png' width=500></td></tr></table>
 
-I had noticed a lot of the most frequent words in the review text happened to be words with no sentimental impact, so I had to keep that in mind for further preprocessing steps.
+I had noticed a lot of the most frequent words in the review text happened to be words with no sentimental impact, so I iteratively removed unmeaningful words such as 'room', 'hotel', 'hilton' etc. I did this as a precaution, as some of these words may impact my model accuracies.
 
-To narrow down the feature words I applied stemmation and lemmitisation to both the reviews and review summaries.
+<h5 align="center">World Cloud of Frequent Words and Phrases in Text After Removing Unmeaningful Words(Review Summary (Left) and Review (Right))</h5>
+<table><tr><td><img src='https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/word_cloud_review_summary.png' width=500></td><td><img src='https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/word_cloud_review.png' width=500></td></tr></table>
 
-<h5 align="center">Distribution Plot of Frequent Words and Phrases in Text (Review Summary (Left) and Review (Right))</h5>
+To narrow down the feature words I applied stemmation and lemmitisation to both the reviews and review summaries. 
+
+<h5 align="center">Example of Lemmatisation and Stemmation Applied to a Review and Review Summary</h5>
 <p align="center">
   <img src="https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/lemm_stemm_ex.png" width=800>
 </p>
+
+Stemmation had broken down some words into words that don't exist, whereas lemmitisation had simplified adjectives and verbs to their root form. I chose to continue with the lemmitised version of the texts for further processing.
+
+Prior to vectorising the current dataset, I did a train, test split to save the test data for after modelling.
+
+Using the lemmed texts for review and review summary I used TF-IDF vectorisation, leaving me with a vectorised dataset with 234 words and phrases (178 from reviews and 56 from review summaries).
 
 
 <a name="Modelling"></a>
