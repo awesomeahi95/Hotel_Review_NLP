@@ -187,6 +187,14 @@ Looking into different metrics and deeper into my best model; Logistic Regressio
   <img src="https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/best_model_conf_matrix.png" width=600>
 </p>
 
+Looking at the precision, recall, and f1 score, I also noticed the scores were higher around scores of 1 and 5, less for 2 and 4, and the least for 3. This shows that the models performs well on more extreme opinions on reviews than mixed opinions.
+
+
+<h5 align="center">More Metrics for Best Model</h5>
+<p align="center">
+  <img src="https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/best_model_f1_score.png" width=600>
+</p>
+
 <a name="Evaluation"></a>
 ### Evaluation
 
