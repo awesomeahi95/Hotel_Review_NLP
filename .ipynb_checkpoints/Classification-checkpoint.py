@@ -204,11 +204,11 @@ class Classification():
         
         plt.figure(figsize=(9,9))
         ax = sns.heatmap(confusion_matrix(self.y_val, self.y_validated),
-                        annot= True, 
-                        fmt = '.4g', 
-                        cbar=0,
-                        xticklabels=[1,2,3,4,5],
-                        yticklabels=[1,2,3,4,5])
+                         annot= True, 
+                         fmt = '.4g', 
+                         cbar=0,
+                         xticklabels=[1,2,3,4,5],
+                         yticklabels=[1,2,3,4,5])
         ax.set(xlabel='Predicted', ylabel='True')
         plt.show()
 
@@ -239,12 +239,13 @@ class Classification():
             
         self.y_test = y_test
         self.x_test = X_test
-        self.scores = Classification.scores(self,self.best_model,self.x_train,self.x_test,self.y_train,self.y_test)
+        self.scores_table = pd.DataFrame()
+        self.test_scores = Classification.scores(self,self.best_model,self.x_train,self.x_test,self.y_train,self.y_test)
         display(self.scores_table)
-        self.roc_plot = Classification.roc_plot(self,self.best_model,self.x_train,self.x_test,self.y_train,self.y_test)
         self.y_tested = self.best_model.predict(self.x_test)
+        self.test_classification_report = pd.DataFrame.from_dict(classification_report(self.y_test,self.y_tested,output_dict=True)).iloc[0:3,0:5]
         
-        return self.roc_plot
+        return self.test_classification_report
     
 #===============================================================================================#
 
@@ -252,32 +253,24 @@ class Classification():
 
 #===============================================================================================#
 
-    def show_test_conf_matrix(self):
-       
-        """
-        Displays a graphic confusion matrix for test data.
-
-        """
+    def test_conf_matrix(self):
         
-        Classification.conf_matrix(self,self.y_val,self.y_tested)
-        cnf_matrix = confusion_matrix(self.y_test,self.y_tested)
-        self.cnf_matrix = cnf_matrix
+        """
+        Create a confusion matrix for the test data.
+        
 
-        plt.figure(figsize=(7,7))
-        plt.imshow(cnf_matrix,  cmap=plt.cm.Reds) 
+        Returns
+        ----------
+        scores_table: a confusion matrix
 
-        plt.title('Confusion Matrix')
-        plt.ylabel('True label')
-        plt.xlabel('Predicted label')
-
-        tick_marks = np.arange(2)
-        plt.xticks(tick_marks, rotation=45)
-        plt.yticks(tick_marks)
-
-        thresh = cnf_matrix.max() / 2.
-        for i, j in itertools.product(range(cnf_matrix.shape[0]), range(cnf_matrix.shape[1])):
-                plt.text(j, i, cnf_matrix[i, j],
-                         horizontalalignment='center',fontsize=25)
-        plt.grid(False)
-        plt.colorbar
+        """
+        plt.figure(figsize=(9,9))
+        ax = sns.heatmap(confusion_matrix(self.y_test, self.y_tested),
+                         annot= True, 
+                         fmt = '.4g', 
+                         cbar=0,
+                         xticklabels=[1,2,3,4,5],
+                         yticklabels=[1,2,3,4,5])
+        ax.set(xlabel='Predicted', ylabel='True')
+        plt.show()
         

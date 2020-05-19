@@ -6,6 +6,11 @@ Potential customers, could have their hotel choice be influenced by a tweet. Opi
 
 By using sentiment analysis, on existing hotel reviews from Tripadvisor.com, I created a model that can quantify on a scale of 1-5, how the author of a tweet on twitter, or a post on a reddit thread, feels about our hotel, and as a result, also how the readers think about us.
 
+## My Details
+
+ - Name = Ahilan Srivishnumohan
+ - Linkedin = https://www.linkedin.com/in/ahilan-srivishnumohan/
+ - Email Address = candyahs@gmail.com
 ## Table of Contents
 
 1. [ File Descriptions ](#File_Description)
@@ -15,7 +20,7 @@ By using sentiment analysis, on existing hotel reviews from Tripadvisor.com, I c
        * [ Webscraping ](#Webscraping)
        * [ Early EDA and Cleaning](#Early_EDA_and_Cleaning)
    * [ 2. Further EDA and Preprocessing ](#Further_EDA_and_Preprocessing) 
-   * [ 3. Modelling ](#Modelling)
+   * [ 3. Modelling and Hyperparameter Tuning ](#Modelling)
    * [ 4. Evaluation ](#Evaluation)
 
 <a name="File_Description"></a>
@@ -63,7 +68,7 @@ By using sentiment analysis, on existing hotel reviews from Tripadvisor.com, I c
    - 2.8 Joining Reviews With Review Summaries
    - 2.9 Saving Preprocessed Dataset as CSVs
 
-3. Modelling
+3. Modelling and Hyperparameter Tuning
    - 3.1 Imports
    - 3.2 Train and Validation Split
    - 3.3 Decision Tree (Baseline)
@@ -82,6 +87,10 @@ By using sentiment analysis, on existing hotel reviews from Tripadvisor.com, I c
 
 4. Evaluation
    - 4.1 Imports
+   - 4.2 Best Model Selection
+   - 4.3 Best Model Tested
+   - 4.4 Deeper Diver Into Best Model
+   - 4.5 Application Deployability
    
    
 <a name="Executive_Summary"></a>
@@ -178,11 +187,6 @@ I did another data split into Train and Validation data in preparation for using
 
 For the majority of models I created, I applied hyperparameter tuning, where I started with a broad range of hyperparameters, and tuned for optimal train accuracy and validation accuracy. 
 
-I focused on 3 factors of defining a good model:
-
-1. Good Training Accuracy
-2. Good Validation Accuracy
-3. Small Difference between Training and Validation Accuracy
 
 <h5 align="center">Table Comparing Best Models</h5>
 <p align="center">
@@ -191,26 +195,35 @@ I focused on 3 factors of defining a good model:
 
 Initially, I thought the validation accuracy was low for most of the models I created, but when considering these models were attempting to classify for 5 different classes, 0.45 and greater seems very reasonable (where 0.2 = randomly guessing correctly).
 
-I chose Logistic Regression (log_reg_1) as my best model as it achieved the best validation score with only a drop of less than 6 percent between training and validation accuracy score.
+I have saved all the models using the pickle library's dump function and stored them in the Models folder.
 
-Looking into different metrics and deeper into my best model; Logistic Regression, I learnt that most the False Postives came from close misses (e.g. predicting a score of 4 for a true score of 5). This is best shown by a confusion matrix.
-
-<h5 align="center">Confusion Matrix for Best Model</h5>
-<p align="center">
-  <img src="https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/best_model_conf_matrix.png" width=600>
-</p>
-
-Looking at the precision, recall, and f1 score, I also noticed the scores were higher around scores of 1 and 5, less for 2 and 4, and the least for 3. This shows that the models performs well on more extreme opinions on reviews than mixed opinions.
-
-
-<h5 align="center">More Metrics for Best Model</h5>
-<p align="center">
-  <img src="https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/best_model_f1_score.png" width=600>
-</p>
-
-I have saved the best model using the pickle library's dump function.
 
 <a name="Evaluation"></a>
 ### Evaluation
 
+I focused on 3 factors of defining a good model:
 
+1. Good Validation Accuracy
+2. Good Training Accuracy
+3. Small Difference between Training and Validation Accuracy
+
+I chose the logistic regression model as my best model, because it has the second highest validation accuracy with only around 7% drop from train to validation in accuracy. I wanted to minimise overfitting and make the model as reusable as possible. logistic regression achieved a reasonble training accuracy as well, although it did not reach the level of some of the ensemble techniques.
+
+I next tested the best model with the earlier saved test data. The model managed to get a higher test accuracy, than it did with validation data from the model training stage. This is very good, proving that prioritising a high validation score, and minimising the difference between train and validation accuracy, has helped it classify new review texts very well.
+
+<h5 align="center">Test Results</h5>
+<p align="center">
+  <img src="https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/test_results.png" width=600>
+</p>
+
+Looking at the precision, recall, and f1 score, I also noticed the scores were higher around scores of 1 and 5, lower for 2, 3, and 4. This shows that the models performs well on more extreme opinions on reviews than mixed opinions.
+
+Looking into different metrics and deeper into my best model; Logistic Regression, I learnt that most the False Postives came from close misses (e.g. predicting a score of 4 for a true score of 5). This is best shown by these two confusion matrixes (validation and test). 
+
+<h5 align="center">Confusion Matrix for Validation and Test Data Predictions(Validation (Left) and Test (Right))</h5>
+<table><tr><td><img src='https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/validation_conf_matrix.png' width=500></td><td><img src='https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/validation_conf_matrix.png' width=500></td></tr></table>
+
+The adjacent squares of the diagonal going across the confusion matrix, shows that the model's second highest prediction, for a given class (review score) is always a review score that is +- the true score.
+Very few reviews that have a score of 5, have been predicted to have a score of 1 or 2. This is very relieving to know, the majority of the error for the model, is no different to the error a human may make classifying a review to a score with a scale of 1-5.
+
+Given the classifcation problem is 5 way multi-class one and the adjacent classes can have overlap in the english language even to humans, this model I have created can be deployed.
