@@ -6,8 +6,9 @@ Potential customers, could have their hotel choice be influenced by a tweet. Opi
 
 By using sentiment analysis, on existing hotel reviews from Tripadvisor.com, I created a model that can quantify on a scale of 1-5, how the author of a tweet on twitter, or a post on a reddit thread, feels about our hotel, and as a result, also how the readers think about us.
 
-Email: candyahs@gmail.com
-LinkedIn: www.linkedin.com/in/ahilan-srivishnumohan/
+Email: candyahs@gmail.com <br>
+LinkedIn: www.linkedin.com/in/ahilan-srivishnumohan/ <br>
+Medium: www.medium.com/@candyahs <br>
 
 ## Table of Contents
 
@@ -33,7 +34,7 @@ LinkedIn: www.linkedin.com/in/ahilan-srivishnumohan/
     - <strong>4.x_test_data.csv</strong>: test data with x values from preprocessed dataset
     - <strong>4.y_test_data.csv</strong>: test data with y values from preprocessed dataset
 - <strong>Images</strong>: folder containing images used for README and presentation pdf
-- <strong>Models</strong>: folder containing training models saved with pickle
+- <strong>Models</strong>: folder containing trained models saved with pickle
     - <strong>Adabooost.pkl, Decision Tree.pkl, KNN.pkl, Logistic Regression.pkl, Naive Bayes.pkl, Random Forest.pkl, Stacking.pkl, SVM.pkl, Voting.pkl, XGBoost.pkl</strong>
 - <strong>Tripadvisor_Webscrape</strong>: folder containing all webscraping files
     - <strong>Tripadvisor</strong>: folder containing .py files and spiders used
@@ -45,10 +46,10 @@ LinkedIn: www.linkedin.com/in/ahilan-srivishnumohan/
 - <strong>1.Webscraping_Early_EDA_and_Cleaning.ipynb</strong>: notebook with early data exploration and data manipulation
 - <strong>2.Further_EDA_and_Preprocessing.ipynb</strong>: notebook with feature engineering and nlp preprocessing
 - <strong>3.Modelling_and_Hyperparameter_Tuning.ipynb</strong>: notebook with all the models created
-- <strong>4.Evaluation</strong>
-- <strong>Classification.py</strong>: contains classes for classifcation methods
-- <strong>Ensemble.py</strong>: contains classes for ensemble methods
-- <strong>Hilton__Hotel_Presentation.pdf</strong>: presentation summarising project process and findings
+- <strong>4.Evaluation</strong>: notebook with final model selection, testing, and model evaluation
+- <strong>Classification.py</strong>: contains classe with classifcation methods
+- <strong>Ensemble.py</strong>: contains classe with ensemble methods
+- <strong>Hilton__Hotel_Presentation.pdf</strong>: presentation summarising project case, processese, and findings
 
 
 <a name="Structure"></a>
