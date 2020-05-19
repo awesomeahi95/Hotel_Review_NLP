@@ -1,4 +1,7 @@
-# Hilton London
+<h5 align="center"># HILTON HOTEL LONDON REVIEW CLASSIFIER</h5>
+<p align="center">
+  <img src="https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/5_stars.png" width=600>
+</p>
 
 In the modern day, public discussion and critiquing of products and services occurs beyond dedicated mediums, and now also takes place in the realm of social media, too.
 
