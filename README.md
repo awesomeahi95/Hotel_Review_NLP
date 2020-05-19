@@ -20,7 +20,7 @@ LinkedIn: www.linkedin.com/in/ahilan-srivishnumohan/
    * [ 2. Further EDA and Preprocessing ](#Further_EDA_and_Preprocessing) 
    * [ 3. Modelling and Hyperparameter Tuning ](#Modelling)
    * [ 4. Evaluation ](#Evaluation)
-4. Future Improvements
+4. [ Future Improvements ](#Future_Improvements)
 
 <a name="File_Description"></a>
 ## File Descriptions
@@ -162,12 +162,12 @@ The cleaned dataset had a shape of (9405,4). I started with some analysis on the
 
 Using the FreqDist function in the ntlk library I plotted a graph with the most frequent words and phrases in both columns. Stopwords were removed to capture the more meaningful words.
 
-<h5 align="center">Distribution Plot of Frequent Words and Phrases in Text (Review Summary (Left) and Review (Right))</h5>
+<h5 align="center">Distribution Plot of Frequent Words and Phrases in Text ( Review Summary (Left) and Review (Right) )</h5>
 <table><tr><td><img src='https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/freq_dist_review_sum.png' width=500></td><td><img src='https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/freq_dist_review.png' width=500></td></tr></table>
 
 I had noticed a lot of the most frequent words in the review text happened to be words with no sentimental impact, so I iteratively removed unmeaningful words such as 'room', 'hotel', 'hilton' etc. I did this as a precaution, as some of these words may impact my model accuracies.
 
-<h5 align="center">World Cloud of Frequent Words and Phrases in Text After Removing Unmeaningful Words(Review Summary (Left) and Review (Right))</h5>
+<h5 align="center">World Cloud of Frequent Words and Phrases in Text After Removing Unmeaningful Words ( Review Summary (Left) and Review (Right) )</h5>
 <table><tr><td><img src='https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/word_cloud_review_sum.png' width=500></td><td><img src='https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/word_cloud_review.png' width=500></td></tr></table>
 
 To narrow down the feature words I applied stemmation and lemmitisation to both the reviews and review summaries. 
@@ -226,7 +226,7 @@ Looking at the precision, recall, and f1 score, I also noticed the scores were h
 
 Looking into different metrics and deeper into my best model; Logistic Regression, I learnt that most the False Postives came from close misses (e.g. predicting a score of 4 for a true score of 5). This is best shown by these two confusion matrixes (validation and test). 
 
-<h5 align="center">Confusion Matrix for Validation and Test Data Predictions(Validation (Left) and Test (Right))</h5>
+<h5 align="center">Confusion Matrix for Validation and Test Data Predictions ( Validation (Left) and Test (Right) )</h5>
 <table><tr><td><img src='https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/validation_conf_matrix.png' width=500></td><td><img src='https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/test_conf_matrix.png' width=500></td></tr></table>
 
 The adjacent squares of the diagonal going across the confusion matrix, shows that the model's second highest prediction for a given class (review score) is always a review score that is +-1 the true score.
@@ -234,3 +234,6 @@ Very few reviews that have a score of 5, have been predicted to have a score of 
 
 
 Given the classifcation problem is 5 way multi-class one and the adjacent classes can have overlap in the english language even to humans, this model I have created can be deployed.
+
+<a name="Future_Improvements"></a>
+### Future Improvements
