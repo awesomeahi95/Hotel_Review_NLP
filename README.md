@@ -12,7 +12,7 @@ LinkedIn: www.linkedin.com/in/ahilan-srivishnumohan/
 ## Table of Contents
 
 1. [ File Descriptions ](#File_Description)
-2. [ Strucuture ](#Structure)
+2. [ Structure ](#Structure)
 3. [ Executive Summary ](#Executive_Summary)
    * [ 1. Webscraping, Early EDA, and Cleaning ](#Webscraping_Early_EDA_and_Cleaning)
        * [ Webscraping ](#Webscraping)
@@ -20,12 +20,13 @@ LinkedIn: www.linkedin.com/in/ahilan-srivishnumohan/
    * [ 2. Further EDA and Preprocessing ](#Further_EDA_and_Preprocessing) 
    * [ 3. Modelling and Hyperparameter Tuning ](#Modelling)
    * [ 4. Evaluation ](#Evaluation)
+4. Future Improvements
 
 <a name="File_Description"></a>
 ## File Descriptions
 
 - Data: folder containing all data files
-    - 1.tripadvisor_scraped_hotel_reviews.csv: webscraped data before any changes
+    - <strong>1.tripadvisor_scraped_hotel_reviews.csv</strong>bold: webscraped data before any changes
     - 2.hotel_reviews_structured.csv: data after balancing and cleaning
     - 3.x_train_data.csv: training data with x values from preprocessed dataset
     - 3.y_train_data.csv: training data with y values from preprocessed dataset
