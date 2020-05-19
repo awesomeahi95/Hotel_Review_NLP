@@ -11,8 +11,9 @@ By using sentiment analysis, on existing hotel reviews from Tripadvisor.com, I c
 1. [ File Descriptions ](#File_Description)
 2. [ Strucuture ](#Structure)
 3. [ Executive Summary ](#Executive_Summary)
-   * [ Webscraping ](#Webscraping)
-   * [ 1. Early EDA and Cleaning ](#Early_EDA_and_Cleaning)
+   * [ 1. Webscraping, Early EDA, and Cleaning ](#Webscraping_Early_EDA_and_Cleaning)
+       * [ Webscraping ](#Webscraping)
+       * [ Early EDA and Cleaning](#Early_EDA_and_Cleaning)
    * [ 2. Further EDA and Preprocessing ](#Further_EDA_and_Preprocessing) 
    * [ 3. Modelling ](#Modelling)
    * [ 4. Evaluation ](#Evaluation)
@@ -42,25 +43,25 @@ By using sentiment analysis, on existing hotel reviews from Tripadvisor.com, I c
 <a name="Structure"></a>
 ## Structure of Notebooks:
 1. Early EDA and Cleaning
-   - 1.1 Imports
-   - 1.2 Checking for Nulls
-   - 1.3 Converting Score Column
-   - 1.4 Adjusting Class Imbalance for Scores
-   - 1.5 Joining Review Part 1 with Review Part 2 in New Column Review
-   - 1.6 Removing Review Part 1 and Review Part 2 Columns
-   - 1.7 Saving Structured Dataset as a CSV
+   - 1.1 Webscrape Process Explained
+   - 1.2 Imports
+   - 1.3 Checking for Nulls
+   - 1.4 Converting Score Column
+   - 1.5 Adjusting Class Imbalance for Scores
+   - 1.6 Joining Review Part 1 with Review Part 2 in New Column Review
+   - 1.7 Removing Review Part 1 and Review Part 2 Columns
+   - 1.8 Saving Structured Dataset as a CSV
 
 2. Further EDA and Preprocessing
    - 2.1 Imports
    - 2.2 Checking Frequency of Words and Phrases in Review Summaries
-   - 2.3 Flattening Reviews to Check Word Frequency
-   - 2.4 Checking Frequency of Words and Phrases in Reviews
-   - 2.5 Stemming and Lemming
-   - 2.6 Train Test Split
-   - 2.7 TF-IDF Vectorisation for Reviews
-   - 2.8 TF-IDF Vectorisation for Review Summaries
-   - 2.9 Joining Reviews With Review Summaries
-   - 2.10 Saving Preprocessed Dataset as a CSVs
+   - 2.3 Checking Frequency of Words and Phrases in Reviews
+   - 2.4 Stemming and Lemming
+   - 2.5 Train Test Split
+   - 2.6 TF-IDF Vectorisation for Reviews
+   - 2.7 TF-IDF Vectorisation for Review Summaries
+   - 2.8 Joining Reviews With Review Summaries
+   - 2.9 Saving Preprocessed Dataset as CSVs
 
 3. Modelling
    - 3.1 Imports
@@ -86,8 +87,12 @@ By using sentiment analysis, on existing hotel reviews from Tripadvisor.com, I c
 <a name="Executive_Summary"></a>
 ## Executive Summary
 
+
+<a name="Webscraping_Early_EDA_and_Cleaning"></a>
+### Webscraping, Early EDA, and Cleaning: 
+
 <a name="Webscraping"></a>
-### Webscraping
+#### Webscraping
 
 I set a goal of a minimum of 5000 reviews to scrape, before choosing the specific hotels. I then chose the 5 Hilton hotels with the highest number of reviews, to scrape; London Gatwick Airport, London Metropole, London Euston, London Croydon, and London - West End. 
 Between these 5 hotels there were 17538 reviews, I had plenty room to filter or drop reviews and retain at least my minimum of 5000.
@@ -124,7 +129,7 @@ I used a scrapy spider to crawl the website to scrape the requested data. Scrapy
 
 
 <a name="Early_EDA_and_Cleaning"></a>
-### Early EDA and Cleaning: 
+#### Early EDA and Cleaning: 
 
 The initial shape of the dataset was (35078,5). The 5 columns was as expected, but there were double the number of rows as the number of reviews scraped. There were null rows with only hotel_name and no other values, so I removed those rows, bringing us back to the expected 17538.
 
@@ -161,7 +166,7 @@ Stemmation had broken down some words into words that don't exist, whereas lemmi
 
 Prior to vectorising the current dataset, I did a train, test split to save the test data for after modelling.
 
-Using the lemmed texts for review and review summary I used TF-IDF vectorisation with an ngram range of 2, leaving me with a vectorised dataset with 174 words and phrases (141 from reviews and 33 from review summaries). I then saved the x and y train data in separate csv files for modelling.
+Using the lemmed texts for review and review summary I used TF-IDF vectorisation with an ngram range of 2, leaving me with a vectorised dataset with 139 words and phrases (115 from reviews and 24 from review summaries). I then saved the x and y train data in separate csv files for modelling.
 
 
 <a name="Modelling"></a>

@@ -64,7 +64,7 @@ class Classification():
         elif self.model_type == 'Naive Bayes':
             self.technique = GaussianNB()
         elif self.model_type == 'KNN':
-            self.technique = KNeighborsClassifier()
+            self.technique = KNeighborsClassifier(n_jobs=-1)
             
 #===============================================================================================#
 
@@ -172,7 +172,7 @@ class Classification():
         feature_importances_bar : a bar chart with feature importance of given model
 
         """
-        if (self.model_type == 'Decision Tree') or (self.model_type == 'Random Forest'):    
+        if (self.model_type == 'Decision Tree') or (self.model_type == 'Random Forest') or (self.model_type == 'SVM'):    
             self.feature_importances_table = pd.DataFrame(self.best_model.feature_importances_,
                                                     index = self.x_train.columns,
                                                     columns=['Importance']).sort_values('Importance',ascending =False)
@@ -206,7 +206,9 @@ class Classification():
         ax = sns.heatmap(confusion_matrix(self.y_val, self.y_validated),
                         annot= True, 
                         fmt = '.4g', 
-                        cbar=0)
+                        cbar=0,
+                        xticklabels=[1,2,3,4,5],
+                        yticklabels=[1,2,3,4,5])
         ax.set(xlabel='Predicted', ylabel='True')
         plt.show()
 

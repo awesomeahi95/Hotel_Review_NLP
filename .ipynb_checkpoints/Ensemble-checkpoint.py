@@ -49,7 +49,7 @@ class Ensemble(Classification):
         if self.ensemble_method == "Voting":
             self.technique = VotingClassifier(estimators=estimators, voting='soft', n_jobs=-1)
         elif self.ensemble_method == "AdaBoost":
-            self.technique = AdaBoostClassifier(estimators, algorithm='SAMME', n_estimators=20)
+            self.technique = AdaBoostClassifier(estimators, algorithm='SAMME')
         elif self.ensemble_method == "XGBoost":
             self.technique = XGBClassifier(n_jobs=-1)
         elif self.ensemble_method == "Stacking":
