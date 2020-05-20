@@ -1,7 +1,7 @@
-<h1 align='center'> HILTON HOTEL LONDON REVIEW CLASSIFIER </h1>
+<h1 align='center'> HILTON HOTEL LONDON REVIEWS CLASSIFIER </h1>
 
 <p align="center">
-  <img src="https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/five_stars.png" width=100>
+  <img src="https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/five_stars.png" width=600>
 </p>
 
 In the modern day, public discussion and critiquing of products and services occurs beyond dedicated mediums, and now also takes place in the realm of social media, too.
@@ -237,8 +237,18 @@ Looking into different metrics and deeper into my best model; Logistic Regressio
 The adjacent squares of the diagonal going across the confusion matrix, shows that the model's second highest prediction for a given class (review score) is always a review score that is +-1 the true score.
 Very few reviews that have a score of 5, have been predicted to have a score of 1 or 2. This is very relieving to know, the majority of the error for the model, is no different to the error a human may make classifying a review to a score with a scale of 1-5.
 
+- most errors were near misses (e.g. 5 predicted as 4)
+- extreme scores (1 and 5) were relatively accurate
+- comparable to human prediction
+- reusable and consistent
+
 
 Given the classifcation problem is 5 way multi-class one and the adjacent classes can have overlap in the english language even to humans, this model I have created can be deployed.
 
 <a name="Future_Improvements"></a>
 ### Future Improvements
+
+- Model using RNN and LSTMs - see if better accuracy can be achieved
+- Create a working application to test new reviews written by people
+- Try a different pre-processing approach and see if model performances change
+- Bring in new sources of data to see if there are significant differences on frequent words used
