@@ -186,7 +186,7 @@ Stemmation had broken down some words into words that don't exist, whereas lemmi
 
 Prior to vectorising the current dataset, I did a train, test split to save the test data for after modelling.
 
-Using the lemmed texts for review and review summary I used TF-IDF vectorisation with an ngram range of 2, leaving me with a vectorised dataset with 139 words and phrases (115 from reviews and 24 from review summaries). I then saved the x and y train data in separate csv files for modelling.
+Using the lemmed texts for review and review summary I used TF-IDF vectorisation with an ngram range of 2, leaving me with a vectorised dataset with 138 words and phrases (112 from reviews and 26 from review summaries). I then saved the x and y train data in separate csv files for modelling.
 
 
 <a name="Modelling"></a>
@@ -218,9 +218,9 @@ I focused on 3 factors of defining a good model:
 2. Good Training Accuracy
 3. Small Difference between Training and Validation Accuracy
 
-I chose the logistic regression model as my best model, because it has the second highest validation accuracy with only around 7% drop from train to validation in accuracy. I wanted to minimise overfitting and make the model as reusable as possible. Logistic regression achieved a reasonable training accuracy as well, although it did not reach the level of some of the ensemble techniques.
+I chose the Stacking ensemble model ( (Adaboost with log_reg_2) stacked with log_reg_2 ) as my best model, because it has the highest validation accuracy with only around 3.5% drop from train to validation in accuracy. I wanted to minimise overfitting and make the model as reusable as possible. Stacking achieved a reasonable training accuracy as well, although it did not reach the level of some of the other ensemble techniques.
 
-I next tested the best model with the earlier saved test data. The model managed to get a higher test accuracy, than it did with validation data from the model training stage. This is very good, proving that prioritising a high validation score, and minimising the difference between train and validation accuracy, has helped it classify new review texts very well.
+I next tested the best model with the earlier saved test data. The model managed to get a high test accuracy, similar to the validation data from the model training stage. This is very good, proving that prioritising a high validation score, and minimising the difference between train and validation accuracy, has helped it classify new review texts very well.
 
 <h5 align="center">Test Results</h5>
 <p align="center">
@@ -229,7 +229,7 @@ I next tested the best model with the earlier saved test data. The model managed
 
 Looking at the precision, recall, and f1 score, I also noticed the scores were higher around scores of 1 and 5, lower for 2, 3, and 4. This shows that the models performs well on more extreme opinions on reviews than mixed opinions.
 
-Looking into different metrics and deeper into my best model; Logistic Regression, I learnt that most the False Postives came from close misses (e.g. predicting a score of 4 for a true score of 5). This is best shown by these two confusion matrixes (validation and test). 
+Looking into different metrics and deeper into my best model; Stacking, I learnt that most the False Postives came from close misses (e.g. predicting a score of 4 for a true score of 5). This is best shown by these two confusion matrixes (validation and test). 
 
 <h5 align="center">Confusion Matrix for Validation and Test Data Predictions ( Validation (Left) and Test (Right) )</h5>
 <table><tr><td><img src='https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/validation_conf_matrix.png' width=500></td><td><img src='https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/test_conf_matrix.png' width=500></td></tr></table>
