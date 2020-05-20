@@ -245,6 +245,8 @@ Very few reviews that have a score of 5, have been predicted to have a score of 
 
 Given the classifcation problem is 5 way multi-class one and the adjacent classes can have overlap in the english language even to humans, this model I have created can be deployed.
 
+Applying this model will address the problem of not having a full understanding of public opinion of our hotel. We can apply this to new sources for opinions on our hotel and yield more feedback then we did had before.
+
 <a name="Future_Improvements"></a>
 ### Future Improvements
 
