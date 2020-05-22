@@ -29,10 +29,11 @@ Medium: www.medium.com/@candyahs <br>
    * [ 4. Evaluation ](#Evaluation)
 4. [ Future Improvements ](#Future_Improvements)
 </details>
-    
-<a name="File_Description"></a>
-## File Descriptions
 
+<details>
+<a name="File_Description"></a>
+<summary> ## File Descriptions </summary>
+<br>
 - <strong>Data</strong>: folder containing all data files
     - <strong>1.tripadvisor_scraped_hotel_reviews.csv</strong>: webscraped data before any changes
     - <strong>2.hotel_reviews_structured.csv</strong>: data after balancing and cleaning
@@ -57,7 +58,7 @@ Medium: www.medium.com/@candyahs <br>
 - <strong>Classification.py</strong>: contains classe with classifcation methods
 - <strong>Ensemble.py</strong>: contains classe with ensemble methods
 - <strong>Hilton__Hotel_Presentation.pdf</strong>: presentation summarising project case, processese, and findings
-
+</details>
 
 <a name="Structure"></a>
 ## Structure of Notebooks:
