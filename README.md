@@ -28,7 +28,7 @@ Medium: www.medium.com/@candyahs <br>
    * [ 2. Further EDA and Preprocessing ](#Further_EDA_and_Preprocessing) 
    * [ 3. Modelling and Hyperparameter Tuning ](#Modelling)
    * [ 4. Evaluation ](#Evaluation)
-4. [ Future Improvements ](#Future_Improvements)
+       * [ Future Improvements ](#Future_Improvements)
 </details>
 
 ## File Descriptions
@@ -37,30 +37,30 @@ Medium: www.medium.com/@candyahs <br>
 <summary>Show/Hide</summary>
 <br>
     
-1. <strong>Data</strong>: folder containing all data files
+* <strong>Data</strong>: folder containing all data files
     * <strong>1.tripadvisor_scraped_hotel_reviews.csv</strong>: webscraped data before any changes
     * <strong>2.hotel_reviews_structured.csv</strong>: data after balancing and cleaning
     * <strong>3.x_train_data.csv</strong>: training data with x values from preprocessed dataset
     * <strong>3.y_train_data.csv</strong>: training data with y values from preprocessed dataset
     * <strong>4.x_test_data.csv</strong>: test data with x values from preprocessed dataset
     * <strong>4.y_test_data.csv</strong>: test data with y values from preprocessed dataset
-2. <strong>Images</strong>: folder containing images used for README and presentation pdf
-3. <strong>Models</strong>: folder containing trained models saved with pickle
+* <strong>Images</strong>: folder containing images used for README and presentation pdf
+* <strong>Models</strong>: folder containing trained models saved with pickle
     * <strong>Adabooost.pkl, Decision Tree.pkl, KNN.pkl, Logistic Regression.pkl, Naive Bayes.pkl, Random Forest.pkl, Stacking.pkl, SVM.pkl, Voting.pkl, XGBoost.pkl</strong>
-4. <strong>Tripadvisor_Webscrape</strong>: folder containing all webscraping files
+* <strong>Tripadvisor_Webscrape</strong>: folder containing all webscraping files
     * <strong>Tripadvisor</strong>: folder containing .py files and spiders used
         * <strong>spiders</strong>: folder containing spider files and datasets
             * <strong>hotels.py</strong>: main spider .py file for scraping hotel reviews from Tripadvisor
             * <strong>tripadvisor_scraped_hotel_reviews.csv</strong>: csv file with data to be used for project
         * <strong>_init_.py, items.py, middlewares.py, pipelines.py, settings.py: default scrapy files used for webscrape</strong>
     * <strong>scrapy.cfg</strong>: scrap config file
-5. <strong>1.Webscraping_Early_EDA_and_Cleaning.ipynb</strong>: notebook with early data exploration and data manipulation
-6. <strong>2.Further_EDA_and_Preprocessing.ipynb</strong>: notebook with feature engineering and nlp preprocessing
-7. <strong>3.Modelling_and_Hyperparameter_Tuning.ipynb</strong>: notebook with all the models created
-8. <strong>4.Evaluation</strong>: notebook with final model selection, testing, and model evaluation
-9. <strong>Classification.py</strong>: contains classe with classifcation methods
-10. <strong>Ensemble.py</strong>: contains classe with ensemble methods
-11. <strong>Hilton__Hotel_Presentation.pdf</strong>: presentation summarising project case, processese, and findings
+* <strong>1.Webscraping_Early_EDA_and_Cleaning.ipynb</strong>: notebook with early data exploration and data manipulation
+* <strong>2.Further_EDA_and_Preprocessing.ipynb</strong>: notebook with feature engineering and nlp preprocessing
+* <strong>3.Modelling_and_Hyperparameter_Tuning.ipynb</strong>: notebook with all the models created
+* <strong>4.Evaluation</strong>: notebook with final model selection, testing, and model evaluation
+* <strong>Classification.py</strong>: contains classe with classifcation methods
+* <strong>Ensemble.py</strong>: contains classe with ensemble methods
+* <strong>Hilton__Hotel_Presentation.pdf</strong>: presentation summarising project case, processese, and findings
 </details>
 
 <a name="Structure"></a>
