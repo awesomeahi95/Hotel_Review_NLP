@@ -63,8 +63,11 @@ Medium: www.medium.com/@candyahs <br>
 * <strong>Hilton__Hotel_Presentation.pdf</strong>: presentation summarising project case, processese, and findings
 </details>
 
-<a name="Structure"></a>
 ## Structure of Notebooks:
+<details>
+<a name="Structure"></a>
+<summary>Show/Hide</summary>
+<br>
 1. Early EDA and Cleaning
    - 1.1 Webscrape Process Explained
    - 1.2 Imports
@@ -109,7 +112,7 @@ Medium: www.medium.com/@candyahs <br>
    - 4.3 Best Model Tested
    - 4.4 Deeper Diver Into Best Model
    - 4.5 Application Deployability
-   
+</details>  
    
 <a name="Executive_Summary"></a>
 ## Executive Summary
