@@ -14,8 +14,9 @@ Email: candyahs@gmail.com <br>
 LinkedIn: www.linkedin.com/in/ahilan-srivishnumohan/ <br>
 Medium: www.medium.com/@candyahs <br>
 
+## Table of Contents
 <details>
-<summary> ## Table of Contents </summary>
+<summary>Show</summary>
 <br>
 
 1. [ File Descriptions ](#File_Description)
