@@ -34,9 +34,9 @@ Medium: www.medium.com/@candyahs <br>
 <a name="File_Description"></a>
 <summary> ## File Descriptions </summary>
 <br>
-- <strong>Data</strong>: folder containing all data files
-    - <strong>1.tripadvisor_scraped_hotel_reviews.csv</strong>: webscraped data before any changes
-    - <strong>2.hotel_reviews_structured.csv</strong>: data after balancing and cleaning
++ <strong>Data</strong>: folder containing all data files
+    + <strong>1.tripadvisor_scraped_hotel_reviews.csv</strong>: webscraped data before any changes
+    + <strong>2.hotel_reviews_structured.csv</strong>: data after balancing and cleaning
     - <strong>3.x_train_data.csv</strong>: training data with x values from preprocessed dataset
     - <strong>3.y_train_data.csv</strong>: training data with y values from preprocessed dataset
     - <strong>4.x_test_data.csv</strong>: test data with x values from preprocessed dataset
