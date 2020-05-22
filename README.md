@@ -14,7 +14,9 @@ Email: candyahs@gmail.com <br>
 LinkedIn: www.linkedin.com/in/ahilan-srivishnumohan/ <br>
 Medium: www.medium.com/@candyahs <br>
 
-## Table of Contents
+<details>
+<summary> ## Table of Contents </summary>
+<br>
 
 1. [ File Descriptions ](#File_Description)
 2. [ Structure ](#Structure)
@@ -26,7 +28,8 @@ Medium: www.medium.com/@candyahs <br>
    * [ 3. Modelling and Hyperparameter Tuning ](#Modelling)
    * [ 4. Evaluation ](#Evaluation)
 4. [ Future Improvements ](#Future_Improvements)
-
+</details>
+    
 <a name="File_Description"></a>
 ## File Descriptions
 
