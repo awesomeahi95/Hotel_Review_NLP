@@ -69,49 +69,49 @@ Medium: www.medium.com/@candyahs <br>
 <summary>Show/Hide</summary>
 <br>
 1. Early EDA and Cleaning
-   - 1.1 Webscrape Process Explained
-   - 1.2 Imports
-   - 1.3 Checking for Nulls
-   - 1.4 Converting Score Column
-   - 1.5 Adjusting Class Imbalance for Scores
-   - 1.6 Joining Review Part 1 with Review Part 2 in New Column Review
-   - 1.7 Removing Review Part 1 and Review Part 2 Columns
-   - 1.8 Saving Structured Dataset as a CSV
+   * 1.1 Webscrape Process Explained
+   * 1.2 Imports
+   * 1.3 Checking for Nulls
+   * 1.4 Converting Score Column
+   * 1.5 Adjusting Class Imbalance for Scores
+   * 1.6 Joining Review Part 1 with Review Part 2 in New Column Review
+   * 1.7 Removing Review Part 1 and Review Part 2 Columns
+   * 1.8 Saving Structured Dataset as a CSV
 
 2. Further EDA and Preprocessing
-   - 2.1 Imports
-   - 2.2 Checking Frequency of Words and Phrases in Review Summaries
-   - 2.3 Checking Frequency of Words and Phrases in Reviews
-   - 2.4 Stemming and Lemming
-   - 2.5 Train Test Split
-   - 2.6 TF-IDF Vectorisation for Reviews
-   - 2.7 TF-IDF Vectorisation for Review Summaries
-   - 2.8 Joining Reviews With Review Summaries
-   - 2.9 Saving Preprocessed Dataset as CSVs
+   * 2.1 Imports
+   * 2.2 Checking Frequency of Words and Phrases in Review Summaries
+   * 2.3 Checking Frequency of Words and Phrases in Reviews
+   * 2.4 Stemming and Lemming
+   * 2.5 Train Test Split
+   * 2.6 TF-IDF Vectorisation for Reviews
+   * 2.7 TF-IDF Vectorisation for Review Summaries
+   * 2.8 Joining Reviews With Review Summaries
+   * 2.9 Saving Preprocessed Dataset as CSVs
 
 3. Modelling and Hyperparameter Tuning
-   - 3.1 Imports
-   - 3.2 Train and Validation Split
-   - 3.3 Decision Tree (Baseline)
-   - 3.4 Random Forest
-   - 3.5 Logistic Regression
-   - 3.6 Support Vector Machines
-   - 3.7 Guassian Naive Bayes
-   - 3.8 KNN
-   - 3.9 Adaboost (Logistic Regression)
-   - 3.10 XGBoost (Logistic Regression)
-   - 3.11 Voting
-   - 3.12 Stacking
-   - 3.13 All Models Compared
-   - 3.14 Best Model (Logistic Regression) - Deeper Look
-   - 3.15 Saving Best Model
+   * 3.1 Imports
+   * 3.2 Train and Validation Split
+   * 3.3 Decision Tree (Baseline)
+   * 3.4 Random Forest
+   * 3.5 Logistic Regression
+   * 3.6 Support Vector Machines
+   * 3.7 Guassian Naive Bayes
+   * 3.8 KNN
+   * 3.9 Adaboost (Logistic Regression)
+   * 3.10 XGBoost (Logistic Regression)
+   * 3.11 Voting
+   * 3.12 Stacking
+   * 3.13 All Models Compared
+   * 3.14 Best Model (Logistic Regression) - Deeper Look
+   * 3.15 Saving Best Model
 
 4. Evaluation
-   - 4.1 Imports
-   - 4.2 Best Model Selection
-   - 4.3 Best Model Tested
-   - 4.4 Deeper Diver Into Best Model
-   - 4.5 Application Deployability
+   * 4.1 Imports
+   * 4.2 Best Model Selection
+   * 4.3 Best Model Tested
+   * 4.4 Deeper Diver Into Best Model
+   * 4.5 Application Deployability
 </details>  
    
 <a name="Executive_Summary"></a>
