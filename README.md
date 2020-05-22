@@ -15,7 +15,7 @@ LinkedIn: www.linkedin.com/in/ahilan-srivishnumohan/ <br>
 Medium: www.medium.com/@candyahs <br>
 
 ## Table of Contents
-<details>
+<details open>
 <summary>Show/Hide</summary>
 <br>
 
@@ -119,7 +119,10 @@ Medium: www.medium.com/@candyahs <br>
 
 
 <a name="Webscraping_Early_EDA_and_Cleaning"></a>
-### Webscraping, Early EDA, and Cleaning: 
+### Webscraping, Early EDA, and Cleaning:
+<details open>
+<summary>Show/Hide</summary>
+<br>
 
 <a name="Webscraping"></a>
 #### Webscraping
@@ -169,6 +172,7 @@ This project entailed the use of classification models, and for reliable results
 <table><tr><td><img src='https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/histogram_of_scores_for_all_hotels.png' width=500></td><td><img src='https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/histogram_of_scores_for_all_hotels_after_balancing.png' width=500></td></tr></table>
 
 I combined the review p1 and review p2 column into one to make future vectorisation much easier, then I saved the cleaned dataset as a csv, for the next stage.
+</details>  
 
 <a name="Further_EDA_and_Preprocessing"></a>
 ### Further EDA and Preprocessing
