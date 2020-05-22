@@ -176,7 +176,10 @@ I combined the review p1 and review p2 column into one to make future vectorisat
 
 <a name="Further_EDA_and_Preprocessing"></a>
 ### Further EDA and Preprocessing
-
+<details open>
+<summary>Show/Hide</summary>
+<br>
+    
 The cleaned dataset had a shape of (9405,4). I started with some analysis on the text columns; review and review summary.
 
 Using the FreqDist function in the ntlk library I plotted a graph with the most frequent words and phrases in both columns. Stopwords were removed to capture the more meaningful words.
@@ -201,10 +204,13 @@ Stemmation had broken down some words into words that don't exist, whereas lemmi
 Prior to vectorising the current dataset, I did a train, test split to save the test data for after modelling.
 
 Using the lemmed texts for review and review summary I used TF-IDF vectorisation with an ngram range of 2, leaving me with a vectorised dataset with 138 words and phrases (112 from reviews and 26 from review summaries). I then saved the x and y train data in separate csv files for modelling.
-
+</details>
 
 <a name="Modelling"></a>
 ### Modelling:
+<details open>
+<summary>Show/Hide</summary>
+<br>
 
 I have created .py files; Classifiction.py and Ensemble.py with classes, that contain functions to simplify the modelling process, and to neaten up the modelling notebook.
 
@@ -221,10 +227,13 @@ For the majority of models I created, I applied hyperparameter tuning, where I s
 Initially, I thought the validation accuracy was low for most of the models I created, but when considering these models were attempting to classify for 5 different classes, 0.45 and greater seems very reasonable (where 0.2 = randomly guessing correctly).
 
 I have saved all the models using the pickle library's dump function and stored them in the Models folder.
-
+</details>
 
 <a name="Evaluation"></a>
 ### Evaluation
+<details open>
+<summary>Show/Hide</summary>
+<br>
 
 I focused on 3 factors of defining a good model:
 
@@ -262,9 +271,11 @@ Given the classifcation problem is 5 way multi-class one and the adjacent classe
 Applying this model will address the problem of not having a full understanding of public opinion of our hotel. We can apply this to new sources for opinions on our hotel and yield more feedback then we did had before.
 
 <a name="Future_Improvements"></a>
-### Future Improvements
+#### Future Improvements
 
 - Model using RNN and LSTMs - see if better accuracy can be achieved
 - Create a working application to test new reviews written by people
 - Try a different pre-processing approach and see if model performances change
 - Bring in new sources of data to see if there are significant differences on frequent words used
+
+</details>
