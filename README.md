@@ -68,6 +68,7 @@ Medium: www.medium.com/@candyahs <br>
 <a name="Structure"></a>
 <summary>Show/Hide</summary>
 <br>
+    
 1. Early EDA and Cleaning
    * 1.1 Webscrape Process Explained
    * 1.2 Imports
