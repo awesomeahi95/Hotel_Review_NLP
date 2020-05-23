@@ -58,6 +58,7 @@ Medium: www.medium.com/@candyahs <br>
 * <strong>2.Further_EDA_and_Preprocessing.ipynb</strong>: notebook with feature engineering and nlp preprocessing
 * <strong>3.Modelling_and_Hyperparameter_Tuning.ipynb</strong>: notebook with all the models created
 * <strong>4.Evaluation</strong>: notebook with final model selection, testing, and model evaluation
+* <strong>5.Neural_Network_Modelling</strong>: notebook with an extra model training using neural networks
 * <strong>Classification.py</strong>: contains classe with classifcation methods
 * <strong>Ensemble.py</strong>: contains classe with ensemble methods
 * <strong>Hilton__Hotel_Presentation.pdf</strong>: presentation summarising project case, processese, and findings
@@ -113,6 +114,19 @@ Medium: www.medium.com/@candyahs <br>
    * 4.3 Best Model Tested
    * 4.4 Deeper Diver Into Best Model
    * 4.5 Application Deployability
+    
+5. Neural Network Modelling
+    * 5.1 Imports
+    * 5.2 One Hot Encoding Score Column
+    * 5.3 Train Test Split
+    * 5.4 Add Suffix to the Review Summary to Distinguish the Difference
+    * 5.5 Removing Punctuation and Tokenizing Review Column
+    * 5.6 Creating a Dictionary With Words That Appear in Reviews and an Index
+    * 5.7 Indexing Words in Reviews Using Dictionary
+    * 5.8 Combining Indexed Review Summary and Indexed Review Into a Single Column Called All Preprocessed Review
+    * 5.9 Modelling
+    * 5.10 Testing Model
+    * 5.11 Look at Confusion Matrix
 </details>  
    
 <a name="Executive_Summary"></a>
