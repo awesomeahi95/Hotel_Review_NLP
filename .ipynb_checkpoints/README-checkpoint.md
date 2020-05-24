@@ -298,7 +298,7 @@ Applying this model will address the problem of not having a full understanding 
 <a name="Future_Improvements"></a>
 #### Future Improvements
 
-- Model using RNN and LSTMs - see if better accuracy can be achieved
+- Model using neural networks - see if better accuracy can be achieved
 - Create a working application to test new reviews written by people
 - Try a different pre-processing approach and see if model performances change
 - Bring in new sources of data to see if there are significant differences on frequent words used
@@ -320,6 +320,7 @@ I experimented with different classifcation and ensemble methods to help classif
 </p>
     
 * Input Layer: 17317 Nodes (one for each word in training data + 4 extra for padding, unknown words, start of review, and unused words)
+* Embedding Layer: takes 17317 unique items and maps them into a 16 dimensional vector space
 * Dense Hidden Layer: 16 Nodes (using relu activation function)
 * Dense Output Layer: 5 nodes for each score (using sigmoid activation function)
     
@@ -330,11 +331,17 @@ I experimented with different classifcation and ensemble methods to help classif
 <details open>
 <summary>Show/Hide</summary>
 <br>
+
+I tested the neural network model using the test data and achieved an accuracy of <strong>0.5710</strong> which is better than the stacking model accuracy of <strong>0.5077</strong>, by <strong>over 5%</strong>. 
+    
+I wanted to look at the confusion matrix, as this gives a better idea of how the model is performing over all 5 classes.
     
 <h5 align="center">Neural Network Model Test Confusion Matrix</h5>
 <p align="center">
   <img src="https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/nn_conf_matrix.png" width=600>
 </p>
+    
+The error is more contained in adjacent scores with the neural network model. Almost zero confusion between extreme scores 1 and 5, and minimal confusion with scores 2 and 4. Although a score of 3 can be harder to predict, there is definitely an improvement from the Stacking model.
     
     
 </details>
