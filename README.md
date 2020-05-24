@@ -311,6 +311,13 @@ Applying this model will address the problem of not having a full understanding 
 <summary>Show/Hide</summary>
 <br>
     
+I experimented with different classifcation and ensemble methods to help classify hotel review scores. Some performed well, but there was definitely room for improvement, so I wanted to explore a deep learning approach. 
+    
+    
+<h5 align="center">Neural Network Architecture</h5>
+<p align="center">
+  <img src="https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/NN_architecture.png" width=600>
+</p>
     
 </details>
 
@@ -319,6 +326,11 @@ Applying this model will address the problem of not having a full understanding 
 <details open>
 <summary>Show/Hide</summary>
 <br>
+    
+<h5 align="center">Neural Network Model Test Confusion Matrix</h5>
+<p align="center">
+  <img src="https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/nn_conf_matrix.png" width=600>
+</p>
     
     
 </details>
