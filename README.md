@@ -341,7 +341,12 @@ I wanted to look at the confusion matrix, as this gives a better idea of how the
   <img src="https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/nn_conf_matrix.png" width=600>
 </p>
     
-The error is more contained in adjacent scores with the neural network model. Almost zero confusion between extreme scores 1 and 5, and minimal confusion with scores 2 and 4. Although a score of 3 can be harder to predict, there is definitely an improvement from the Stacking model.
+The error is more contained within adjacent scores with the neural network model. Almost zero confusion between extreme scores 1 and 5, and minimal confusion with scores 2 and 4. Although a score of 3 can be harder to predict, there is definitely an improvement from the Stacking model.
+
+#### Deployment and Application
     
+After seeing the improvements from the Stacking model, I was more confident about deploying the model for actionable use.
+    
+I planned on future improvements being the addition of the neural network model and then creating an application for the model, so as a next step I decided to make a working application to test out new reviews using streamlit.
     
 </details>
