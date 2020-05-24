@@ -349,4 +349,8 @@ After seeing the improvements from the Stacking model, I was more confident abou
     
 I planned on future improvements being the addition of the neural network model and then creating an application for the model, so as a next step I decided to make a working application to test out new reviews using streamlit.
     
+#### Future Development
+    
+* Create a webscraper spider for twitter, reddit, etc for further testing
+    
 </details>
