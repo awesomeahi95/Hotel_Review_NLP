@@ -59,8 +59,9 @@ Medium: www.medium.com/@candyahs <br>
 * <strong>3.Modelling_and_Hyperparameter_Tuning.ipynb</strong>: notebook with all the models created
 * <strong>4.Evaluation</strong>: notebook with final model selection, testing, and model evaluation
 * <strong>5.Neural_Network_Modelling</strong>: notebook with an extra model training using neural networks
-* <strong>Classification.py</strong>: contains classe with classifcation methods
-* <strong>Ensemble.py</strong>: contains classe with ensemble methods
+* <strong>Classification.py</strong>: contains classes with classifcation methods
+* <strong>Ensemble.py</strong>: contains classes with ensemble methods
+* <strong>Helpers_NN.py</strong>: contains methods used to help with neural network processes
 * <strong>Hilton__Hotel_Presentation.pdf</strong>: presentation summarising project case, processese, and findings
 </details>
 
