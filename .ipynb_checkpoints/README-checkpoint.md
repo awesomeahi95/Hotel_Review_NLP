@@ -319,10 +319,14 @@ I experimented with different classifcation and ensemble methods to help classif
   <img src="https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/NN_architecture.png" width=600>
 </p>
     
+* Input Layer: 17317 Nodes (one for each word in training data + 4 extra for padding, unknown words, start of review, and unused words)
+* Dense Hidden Layer: 16 Nodes (using relu activation function)
+* Dense Output Layer: 5 nodes for each score (using sigmoid activation function)
+    
 </details>
 
 <a name="Revaluation"></a>
-### Revaluation:
+### Revaluation and Deployment:
 <details open>
 <summary>Show/Hide</summary>
 <br>
