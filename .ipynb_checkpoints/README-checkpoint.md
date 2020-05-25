@@ -131,7 +131,7 @@ Medium: www.medium.com/@candyahs <br>
     * 5.9 Modelling
     * 5.10 Testing Model
     * 5.11 Test Confusion Matrix
-    * 5.12 Saving Model with Pickle
+    * 5.12 Saving Model
     
 6. Revaluation and Deployment
     * 6.1 Imports

@@ -14,11 +14,12 @@ import matplotlib.pyplot as plt
 import pickle
 
 from tensorflow import keras
+from tensorflow.keras.models import load_model
 from keras.preprocessing import sequence
 
 
-import keras.backend.tensorflow_backend as tb
-tb._SYMBOLIC_SCOPE.value = True
+# import tensorflow.keras.backend.tensorflow_backend as tb
+# # tb._SYMBOLIC_SCOPE.value = True
 
 from Helpers_NN import add_sum_suffix, text_cleanup
 
@@ -30,7 +31,7 @@ from Helpers_NN import add_sum_suffix, text_cleanup
 
 word_index_dict = pickle.load(open('Data/word_index_dict.pkl','rb'))
 
-neural_net_model = pickle.load(open('Models/Neural_Network.pkl','rb'))
+neural_net_model = load_model('Models/Neural_Network.h5')
 
 def index_review_words(text):
     review_word_list = []
