@@ -11,6 +11,8 @@ import numpy as np
 
 import pickle
 
+from nltk.tokenize import RegexpTokenizer
+
 from tensorflow.keras.models import load_model
 from keras.preprocessing import sequence
 
@@ -23,6 +25,8 @@ from keras.preprocessing import sequence
 word_index_dict = pickle.load(open('Data/word_index_dict.pkl','rb'))
 
 neural_net_model = load_model('Models/Neural_Network.h5')
+
+tokenizer = RegexpTokenizer(r'[a-zA-Z]+')
 
 def index_review_words(text):
     review_word_list = []
