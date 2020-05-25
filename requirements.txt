@@ -5,5 +5,5 @@ keras==2.3.0
 tensorflow==2.0.1
 matplotlib==3.1.0
 nltk==3.4.5
-sklearn==0.22.2.post1
+scikit-learn==0.22.2.post1
 seaborn==0.9.0
