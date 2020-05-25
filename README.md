@@ -14,6 +14,7 @@ Potential customers, could have their hotel choice be influenced by a tweet. Opi
 By using sentiment analysis, on existing hotel reviews from Tripadvisor.com, I created a model that can quantify on a scale of 1-5, how the author of a tweet on twitter, or a post on a reddit thread, feels about our hotel, and as a result, also how the readers think about us. If a review classifies to be less than a score of 3, this post/tweet could be looked into, find out why they had a negative opinion of our hotel, and in return fix the problem. 
 
 Here is a demo application of the review classifier: https://hilton-hotel-app.herokuapp.com/
+
 Try it out by inputting a review that you found online, or wrote yourself, and it will clasify the review with a score between 1-5.
 
 Email: candyahs@gmail.com <br>
