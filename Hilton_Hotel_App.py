@@ -11,7 +11,7 @@ import numpy as np
 
 import pickle
 
-from tensorflow.keras.models import load_model
+from keras.models import load_model
 from keras.preprocessing import sequence
 
 from Helpers_NN import add_sum_suffix, text_cleanup
