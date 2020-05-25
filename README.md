@@ -6,9 +6,15 @@
 
 In the modern day, public discussion and critiquing of products and services occurs beyond dedicated mediums, and now also takes place in the realm of social media, too.
 
-Potential customers, could have their hotel choice be influenced by a tweet. Opinions are shared constantly on social media platforms, and are read by their followers. The knowledge, of what these followers think about our hotel, from reading these online posts, could help us better understand the general public's perception of our hotel.
+Online Hilton Hotel reviews are currently found on tripadvisor, trustpilot, and expedia. The majority of reviewers gave a score between 3 and 5, so if a new customer browses online reviews on any of the previously mentioned review sites, they may consider booking a room at the Hilton. 
 
-By using sentiment analysis, on existing hotel reviews from Tripadvisor.com, I created a model that can quantify on a scale of 1-5, how the author of a tweet on twitter, or a post on a reddit thread, feels about our hotel, and as a result, also how the readers think about us.
+What if they already made up there mind from hearing what a friend had to say?
+Potential customers, could have their hotel choice be influenced by a tweet. Opinions are shared constantly on social media platforms, and are read by their followers. The knowledge, of what these followers think about our hotel, from reading these online posts, could help us better understand the general public's perception of our hotel. 
+
+By using sentiment analysis, on existing hotel reviews from Tripadvisor.com, I created a model that can quantify on a scale of 1-5, how the author of a tweet on twitter, or a post on a reddit thread, feels about our hotel, and as a result, also how the readers think about us. If a review classifies to be less than a score of 3, this post/tweet could be looked into, find out why they had a negative opinion of our hotel, and in return fix the problem. 
+
+Here is a demo application of the review classifier: https://hilton-hotel-app.herokuapp.com/
+Try it out by inputting a review that you found online, or wrote yourself, and it will clasify the review with a score between 1-5.
 
 Email: candyahs@gmail.com <br>
 LinkedIn: www.linkedin.com/in/ahilan-srivishnumohan/ <br>
@@ -20,8 +26,9 @@ Medium: www.medium.com/@candyahs <br>
 <br>
 
 1. [ File Descriptions ](#File_Description)
-2. [ Structure ](#Structure)
-3. [ Executive Summary ](#Executive_Summary)
+2. [ Technologies Used ](#Technologies_Used)    
+3. [ Structure ](#Structure)
+4. [ Executive Summary ](#Executive_Summary)
    * [ 1. Webscraping, Early EDA, and Cleaning ](#Webscraping_Early_EDA_and_Cleaning)
        * [ Webscraping ](#Webscraping)
        * [ Early EDA and Cleaning](#Early_EDA_and_Cleaning)
@@ -67,6 +74,27 @@ Medium: www.medium.com/@candyahs <br>
 * <strong>Helpers_NN.py</strong>: contains methods used to help with neural network processes
 * <strong>Hilton_Hotel_App.py</strong>: contains script to run app
 * <strong>Hilton__Hotel_Presentation.pdf</strong>: presentation summarising project case, processese, and findings
+* <strong>Procfile</strong>: file supporting Heroku application
+* <strong>requirements.txt</strong>: dependencies for heroku application
+</details>
+
+## Tecnologies Used:
+<details>
+<a name="Technologies_Used"></a>
+<summary>Show/Hide</summary>
+<br>
+* <strong>Python</strong>
+* <strong>Pandas</strong>
+* <strong>Numpy</strong>
+* <strong>Matplotlib</strong>
+* <strong>Seaborn</strong>
+* <strong>NLTK</strong>
+* <strong>Scrapy</strong>
+* <strong>Scikit-Learn</strong>
+* <strong>Keras</strong>
+* <strong>Tensorflow</strong>
+* <strong>Streamlit</strong>
+* <strong>Heroku</strong>
 </details>
 
 ## Structure of Notebooks:
@@ -348,10 +376,12 @@ The error is more contained within adjacent scores with the neural network model
     
 After seeing the improvements from the Stacking model, I was more confident about deploying the model for actionable use.
     
-I planned on future improvements being the addition of the neural network model and then creating an application for the model, so as a next step I decided to make a working application to test out new reviews using streamlit.
+I planned on future improvements being the addition of the neural network model and then creating an application for the model, so as a next step I decided to make a working application to test out new reviews using streamlit. I have deployed the app using Heroku: https://hilton-hotel-app.herokuapp.com/. 
+    
+Using this model, we will learn more about our new and old customers, then we can improve Hilton Hotel's guest satisfaction, and as a result increase customer retention and bring in new travelers.
     
 #### Future Development
     
-* Create a webscraper spider for twitter, reddit, etc for further testing
+* Create a webscraper spider for twitter, reddit, etc for further model assessment
     
 </details>
