@@ -65,6 +65,7 @@ Medium: www.medium.com/@candyahs <br>
 * <strong>Classification.py</strong>: contains classes with classifcation methods
 * <strong>Ensemble.py</strong>: contains classes with ensemble methods
 * <strong>Helpers_NN.py</strong>: contains methods used to help with neural network processes
+* <strong>Hilton_Hotel_App.py</strong>: contains script to run app
 * <strong>Hilton__Hotel_Presentation.pdf</strong>: presentation summarising project case, processese, and findings
 </details>
 
