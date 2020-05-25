@@ -8,12 +8,9 @@ import streamlit as sl
 
 import pandas as pd
 import numpy as np
-import seaborn as sns
-import matplotlib.pyplot as plt
 
 import pickle
 
-from tensorflow import keras
 from tensorflow.keras.models import load_model
 from keras.preprocessing import sequence
 
