@@ -44,8 +44,6 @@ def index_review_words(text):
 
 sl.title("Hotel Review Classifier Application")
 
-sl.header("Review Summary")
-
 
 review_summary_text = sl.text_input('Enter Your Review Summary Here')
 review_text = sl.text_area('Enter Your Review Here')
