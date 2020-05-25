@@ -84,6 +84,7 @@ Medium: www.medium.com/@candyahs <br>
 <a name="Technologies_Used"></a>
 <summary>Show/Hide</summary>
 <br>
+    
 * <strong>Python</strong>
 * <strong>Pandas</strong>
 * <strong>Numpy</strong>
