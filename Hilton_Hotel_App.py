@@ -14,8 +14,6 @@ import pickle
 from tensorflow.keras.models import load_model
 from keras.preprocessing import sequence
 
-from Helpers_NN import add_sum_suffix, text_cleanup
-
 #===============================================================================================#
 
 # Functions and Models Prepared
@@ -36,6 +34,24 @@ def index_review_words(text):
 
     return review_word_list 
 
+def add_sum_suffix(text):
+    
+    token_list = tokenizer.tokenize(text.lower())
+    new_text = ''
+    for word in token_list:
+        word = word + '_sum'
+        new_text += word + ' '
+        
+    return new_text
+
+def text_cleanup(text):
+    
+    token_list = tokenizer.tokenize(text.lower())
+    new_text = ''
+    for word in token_list:
+        new_text += word + ' '
+        
+    return new_text
 #===============================================================================================#
 
 # Streamlit
