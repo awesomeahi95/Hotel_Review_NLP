@@ -45,7 +45,7 @@ def add_sum_suffix(text):
     return new_text
 
 def text_cleanup(text):
-    
+    tokenizer = RegexpTokenizer(r'[a-zA-Z]+')
     token_list = tokenizer.tokenize(text.lower())
     new_text = ''
     for word in token_list:
