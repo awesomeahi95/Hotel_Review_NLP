@@ -352,6 +352,7 @@ I experimented with different classifcation and ensemble methods to help classif
     
 * Input Layer: 17317 Nodes (one for each word in training data + 4 extra for padding, unknown words, start of review, and unused words)
 * Embedding Layer: takes 17317 unique items and maps them into a 16 dimensional vector space
+* Global Average 1D Pooling Layer: scales down 16 dimensional layer
 * Dense Hidden Layer: 16 Nodes (using relu activation function)
 * Dense Output Layer: 5 nodes for each score (using sigmoid activation function)
     
