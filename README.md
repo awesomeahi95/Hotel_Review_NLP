@@ -47,36 +47,36 @@ Medium: www.medium.com/@candyahs <br>
 <summary>Show/Hide</summary>
 <br>
     
-* <strong>[ Data ](https://github.com/user/repo/blob/master/Data)</strong>: folder containing all data files
+* <strong>[ Data ](https://github.com/awesomeahi95/Hotel_Review_NLP/tree/master/Data)</strong>: folder containing all data files
     * <strong>1.tripadvisor_scraped_hotel_reviews.csv</strong>: webscraped data before any changes
     * <strong>2.hotel_reviews_structured.csv</strong>: data after balancing and cleaning
     * <strong>3.x_train_data.csv</strong>: training data with x values from preprocessed dataset
     * <strong>3.y_train_data.csv</strong>: training data with y values from preprocessed dataset
     * <strong>4.x_test_data.csv</strong>: test data with x values from preprocessed dataset
     * <strong>4.y_test_data.csv</strong>: test data with y values from preprocessed dataset
-* <strong>Images</strong>: folder containing images used for README and presentation pdf
-* <strong>Models</strong>: folder containing trained models saved with pickle
+* <strong>[ Images ](https://github.com/awesomeahi95/Hotel_Review_NLP/tree/master/Images)</strong>: folder containing images used for README and presentation pdf
+* <strong>[ Models ](https://github.com/awesomeahi95/Hotel_Review_NLP/tree/master/Models)</strong>: folder containing trained models saved with pickle
     * <strong>Adabooost.pkl, Decision Tree.pkl, KNN.pkl, Logistic Regression.pkl, Naive Bayes.pkl, Neural Network.pkl, Random Forest.pkl, Stacking.pkl, SVM.pkl, Voting.pkl, XGBoost.pkl</strong>
-* <strong>Tripadvisor_Webscrape</strong>: folder containing all webscraping files
+* <strong>[ Tripadvisor_Webscrape ](https://github.com/awesomeahi95/Hotel_Review_NLP/tree/master/Tripadvisor_Webscrape)</strong>: folder containing all webscraping files
     * <strong>Tripadvisor</strong>: folder containing .py files and spiders used
         * <strong>spiders</strong>: folder containing spider files and datasets
             * <strong>hotels.py</strong>: main spider .py file for scraping hotel reviews from Tripadvisor
             * <strong>tripadvisor_scraped_hotel_reviews.csv</strong>: csv file with data to be used for project
         * <strong>_init_.py, items.py, middlewares.py, pipelines.py, settings.py: default scrapy files used for webscrape</strong>
     * <strong>scrapy.cfg</strong>: scrap config file
-* <strong>1.Webscraping_Early_EDA_and_Cleaning.ipynb</strong>: notebook with early data exploration and data manipulation
-* <strong>2.Further_EDA_and_Preprocessing.ipynb</strong>: notebook with feature engineering and nlp preprocessing
-* <strong>3.Modelling_and_Hyperparameter_Tuning.ipynb</strong>: notebook with all the models created
-* <strong>4.Evaluation</strong>: notebook with final model selection, testing, and model evaluation
-* <strong>5.Neural_Network_Modelling</strong>: notebook with an extra model training using neural networks
-* <strong>6.Revaluation_and_Deployment</strong>: notebook comparing old best model and NN model, and deployment
-* <strong>Classification.py</strong>: contains classes with classifcation methods
-* <strong>Ensemble.py</strong>: contains classes with ensemble methods
-* <strong>Helpers_NN.py</strong>: contains methods used to help with neural network processes
-* <strong>Hilton_Hotel_App.py</strong>: contains script to run app
-* <strong>Hilton__Hotel_Presentation.pdf</strong>: presentation summarising project case, processese, and findings
-* <strong>Procfile</strong>: file supporting Heroku application
-* <strong>requirements.txt</strong>: dependencies for heroku application
+* <strong>[ 1.Webscraping_Early_EDA_and_Cleaning.ipynb ](https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/1.Webscraping_Early_EDA_and_Cleaning.ipynb)</strong>: notebook with early data exploration and data manipulation
+* <strong>[ 2.Further_EDA_and_Preprocessing.ipynb ](https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/2.Further_EDA_and_Preprocessing.ipynb)</strong>: notebook with feature engineering and nlp preprocessing
+* <strong>[ 3.Modelling_and_Hyperparameter_Tuning.ipynb ](https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/3.Modelling_and_Hyperparameter_Tuning.ipynb)</strong>: notebook with all the models created
+* <strong>[ 4.Evaluation ](https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/4.Evaluation.ipynb)</strong>: notebook with final model selection, testing, and model evaluation
+* <strong>[ 5.Neural_Network_Modelling ](https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/5.Neural_Network_Modelling.ipynb)</strong>: notebook with an extra model training using neural networks
+* <strong>[ 6.Revaluation_and_Deployment ](https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/6.Revaluation_and_Deployment.ipynb)</strong>: notebook comparing old best model and NN model, and deployment
+* <strong>[ Classification.py ](https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Classification.py)</strong>: contains classes with classifcation methods
+* <strong>[ Ensemble.py ](https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Ensemble.py)</strong>: contains classes with ensemble methods
+* <strong>[ Helpers_NN.py ](https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Helpers_NN.py)</strong>: contains methods used to help with neural network processes
+* <strong>[ Hilton_Hotel_App.py ](https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Hilton_Hotel_App.py)</strong>: contains script to run app
+* <strong>[ Hilton__Hotel_Presentation.pdf ](https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Hilton_Hotel_Presentation.pdf)</strong>: presentation summarising project case, processese, and findings
+* <strong>[ Procfile ](https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Procfile)</strong>: file supporting Heroku application
+* <strong>[ requirements.txt ](https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/requirements.txt)</strong>: dependencies for heroku application
 </details>
 
 ## Tecnologies Used:
