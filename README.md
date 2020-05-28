@@ -47,7 +47,7 @@ Medium: www.medium.com/@candyahs <br>
 <summary>Show/Hide</summary>
 <br>
     
-* <strong>Data</strong>: folder containing all data files
+* <strong>[ Data ](https://github.com/user/repo/blob/master/Data)</strong>: folder containing all data files
     * <strong>1.tripadvisor_scraped_hotel_reviews.csv</strong>: webscraped data before any changes
     * <strong>2.hotel_reviews_structured.csv</strong>: data after balancing and cleaning
     * <strong>3.x_train_data.csv</strong>: training data with x values from preprocessed dataset
