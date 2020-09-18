@@ -8,6 +8,8 @@
 
 Try it out by inputting a review that you found online, or wrote yourself, and it will clasify the review with a score between 1-5.
 
+## Business Case
+
 In the modern day, public discussion and critiquing of products and services occurs beyond dedicated mediums, and now also takes place in the realm of social media, too.
 
 Online Hilton Hotel reviews are currently found on tripadvisor, trustpilot, and expedia. The majority of reviewers gave a score between 3 and 5, so if a new customer browses online reviews on any of the previously mentioned review sites, they may consider booking a room at the Hilton. 
