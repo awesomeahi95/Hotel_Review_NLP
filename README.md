@@ -6,7 +6,7 @@
 
 <strong> Here is a demo application of the review classifier: https://hilton-hotel-app.herokuapp.com/ </strong>
 
-Try it out by inputting a review that you found online, or wrote yourself, and it will clasify the review with a score between 1-5.
+Try it out by inputting a review that you found online, or wrote yourself, and it will clasify the review title, the review, or both with a score between 1-5.
 
 ## Business Case
 
