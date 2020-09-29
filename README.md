@@ -1,4 +1,4 @@
-<h1 align='center'>  HILTON HOTEL LONDON REVIEWS CLASSIFIER  </h1>
+<h1 align='center'>HILTON HOTEL LONDON REVIEWS CLASSIFIER</h1>
 
 <p align="center">
   <img src="https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/five_stars.png" width=600>
