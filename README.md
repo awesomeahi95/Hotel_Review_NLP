@@ -4,10 +4,6 @@
   <img src="https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/five_stars.png" width=600>
 </p>
 
-<strong> Here is a demo application of the review classifier: https://hilton-hotel-app.herokuapp.com/ </strong> 
-
-Try it out by inputting a review that you found online, or wrote yourself, and it will clasify the review title, the review, or both with a score between 1-5.
-
 ## Business Case
 
 In the modern day, public discussion and critiquing of products and services occurs beyond dedicated mediums, and now also takes place in the realm of social media, too.
